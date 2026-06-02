@@ -1,0 +1,18 @@
+{
+  "id": "Wizardlatro",
+  "name": "Wizardlatro",
+  "display_name": "Wizardlatro",
+  "author": ["Thagorn"],
+  "description": "Adds mechanics around spending mana to play cards",
+  "prefix": "wlt",
+  "main_file": "Wizardlatro.lua",
+  "priority": 0,
+  "badge_colour": "1de619",
+  "badge_text_colour": "",
+  "version": "0.1.0",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-1221a)",
+    "Lovely (>=0.8)",
+    "Balatro (>=1.0.1o)"
+  ]
+}
