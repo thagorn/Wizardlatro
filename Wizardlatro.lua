@@ -22,10 +22,26 @@ for _, file in ipairs(deck_src) do
     end
 end
 
--- Connections
-local connection_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "connections")
-for _, file in ipairs(connection_src) do
+-- UI
+local ui_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "ui")
+for _, file in ipairs(ui_src) do
     if string.find(file, "%.lua$") then
-        assert(SMODS.load_file("connections/" .. file))()
+        assert(SMODS.load_file("ui/" .. file))()
+    end
+end
+
+-- Functions
+local function_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "functions")
+for _, file in ipairs(function_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("functions/" .. file))()
+    end
+end
+
+-- Hooks
+local hook_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "hooks")
+for _, file in ipairs(hook_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("hooks/" .. file))()
     end
 end
