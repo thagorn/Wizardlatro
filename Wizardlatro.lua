@@ -1,9 +1,10 @@
 WLT = SMODS.current_mod
 
 WLT.MAGIC = {
-    mana = 0,
+    play_mana = 0,
+    cur_mana = 5,
     max_mana = 5,
-    mana_text = nil,
+    play_mana_text = nil,
 }
 
 -- Jokers

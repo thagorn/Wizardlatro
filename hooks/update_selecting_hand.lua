@@ -1,4 +1,3 @@
--- TODO: if mana deck
 local update_selecting_hand_ref = Game.update_selecting_hand
 function Game:update_selecting_hand(dt)
 

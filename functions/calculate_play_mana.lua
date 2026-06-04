@@ -1,4 +1,4 @@
-function calculate_mana(cardarea)
+function calculate_play_mana(cardarea)
     local selected_cards = cardarea.highlighted
     local text,disp_text,poker_hands,scoring_hand,non_loc_disp_text = G.FUNCS.get_poker_hand_info(selected_cards)
     
@@ -32,12 +32,6 @@ function calculate_mana(cardarea)
             end
         end
     end
-    if mana ~= WLT.MAGIC.mana then
-        WLT.MAGIC.mana = mana
-        WLT.MAGIC.mana_text = localize({
-                                    type='variable',
-                                    key='wlt_mana_text',
-                                    vars={mana, WLT.MAGIC.max_mana},
-                                })
-    end
+
+    set_play_mana(mana)
 end
