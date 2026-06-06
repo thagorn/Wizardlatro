@@ -6,7 +6,7 @@ function mana_text_definition()
                     , maxw = 9, colours = {SMODS.Gradients['wlt_mana']},float = true, shadow = true, silent = true, pop_in = 0, pop_in_rate = 6})}},
             }},
             {n=G.UIT.R, config = {align = 'cm', maxw = 1}, nodes={
-                {n=G.UIT.O, config={object = DynaText({scale = 0.6, string = localize('wlt_soul_warning'), maxw = 9, colours = {SMODS.Gradients['wlt_soul']},float = true, shadow = true, silent = true, pop_in = 0, pop_in_rate = 6})}},
+                {n=G.UIT.O, config={object = DynaText({scale = 0.6, string = {{ref_table = WLT.MAGIC, ref_value = 'play_soul_warning'}}, maxw = 9, colours = {SMODS.Gradients['wlt_soul']},float = true, shadow = true, silent = true, pop_in = 0, pop_in_rate = 6})}},
             }}
         }}
 end

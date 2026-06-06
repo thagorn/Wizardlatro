@@ -4,7 +4,8 @@ WLT.MAGIC = {
     play_mana = 0,
     cur_mana = 5,
     max_mana = 5,
-    play_mana_text = nil,
+    play_mana_text = '',
+    play_soul_warning = '',
 }
 
 -- Jokers

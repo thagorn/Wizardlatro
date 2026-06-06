@@ -20,10 +20,12 @@ return {
     },
     misc = {
         dictionary = {
-            wlt_soul_warning="Soul warning!",
         },
         v_dictionary = {
             wlt_mana_text="#1#/#2# Mana",
-        }
+            wlt_soul_warning="Warning! This hand will cost some of your Soul",
+        },
+        v_text = {
+        },
     }
 }

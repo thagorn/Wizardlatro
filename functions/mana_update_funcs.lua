@@ -14,6 +14,14 @@ function set_play_mana(new_mana)
                                         key='wlt_mana_text',
                                         vars={WLT.MAGIC.play_mana, WLT.MAGIC.cur_mana},
                                     })
+        if new_mana > WLT.MAGIC.cur_mana then
+            WLT.MAGIC.play_soul_warning = localize({
+                                            type='variable',
+                                            key='wlt_soul_warning',
+                                        })
+        else
+            WLT.MAGIC.play_soul_warning = ''
+        end
     end
 
 end
