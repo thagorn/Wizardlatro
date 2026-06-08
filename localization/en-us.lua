@@ -26,17 +26,24 @@ return {
             j_wlt_mana_droplet = {
                 name = "Mana Droplet",
                 text = {
-                    "Gain {V:1}#1#{} Mana",
+                    "Gain {V:1}+#1#{} Mana",
                     "when you play a hand"
                 },
             },
             j_wlt_mana_potion = {
                 name = "Mana Potion",
                 text = {
-                    "Gain {V:1}#1#{} Mana",
+                    "Gain {V:1}+#1#{} Mana",
                     "at start of round",
                     "{V:1}-#2#{} Mana per",
                     "round played",
+                },
+            },
+            j_wlt_mana_spring = {
+                name = "Mana Spring",
+                text = {
+                    "Gain {V:1}+#1#{} Mana per",
+                    "hand at start of round",
                 },
             },
         },
