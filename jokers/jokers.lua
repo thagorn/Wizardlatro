@@ -1,0 +1,85 @@
+SMODS.Atlas({
+    key = "jokers",
+    path = "jokers.png",
+    px = 71,
+    py = 95
+})
+
+-- Mana droplet
+SMODS.Joker {
+    atlas = "jokers",
+    pos = { x = 0, y = 0 },
+    key = "mana_droplet",
+    blueprint_compat = true,
+    eternal_compat = true,
+    unlocked = true,
+    discovered = true,
+    rarity = 1,
+    cost = 4,
+    config = { extra = { mana = 1 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mana, colours = { HEX('1400CE') } } }
+    end,
+    calculate = function(self, card, context)
+        if context.before then
+            update_current_mana(card.ability.extra.mana)
+        end
+    end
+}
+
+-- Mana potion
+SMODS.Joker {
+    atlas = "jokers",
+    pos = { x = 1, y = 0 },
+    key = "mana_potion",
+    blueprint_compat = true,
+    eternal_compat = false,
+    unlocked = true,
+    discovered = true,
+    rarity = 1,
+    cost = 5,
+    config = { extra = { mana_loss = 4, mana = 20 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mana, card.ability.extra.mana_loss, colours = { HEX('1400CE') } } }
+    end,
+    calculate = function(self, card, context)
+        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+            if card.ability.extra.mana <= card.ability.extra.mana_loss then
+                SMODS.destroy_cards(card, nil, nil, true)
+                return {
+                    message = localize('wlt_drank_ex'),
+                    colour = G.C.RED
+                }
+            else
+                card.ability.extra.mana = card.ability.extra.mana - card.ability.extra.mana_loss
+                return {
+                    message = localize { type = 'variable', key = 'wlt_mana_minus', vars = { card.ability.extra.mana_loss } },
+                    colour = HEX('1400CE')
+                }
+            end
+        end
+        if context.first_hand_drawn then
+            update_current_mana(card.ability.extra.mana)
+        end
+    end
+}
+
+-- Alchemy
+SMODS.Joker {
+    atlas = "jokers",
+    pos = { x = 2, y = 0 },
+    key = "alchemy",
+    blueprint_compat = false,
+    eternal_compat = true,
+    unlocked = true,
+    discovered = true,
+    rarity = 1,
+    cost = 6,
+    config = { extra = { dollars = 1 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.dollars, colours = { HEX('1400CE') } } }
+    end,
+    calc_dollar_bonus = function(self, card)
+        return WLT.MAGIC.rem_mana * card.ability.extra.dollars
+    end
+}

@@ -4,8 +4,26 @@ WLT.MAGIC = {
     play_mana = 0,
     cur_mana = 5,
     max_mana = 5,
-    play_mana_text = nil,
+    rem_mana = 0,
+    play_mana_text = '',
+    play_soul_warning = '',
 }
+
+-- Functions
+local function_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "functions")
+for _, file in ipairs(function_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("functions/" .. file))()
+    end
+end
+
+-- Hooks
+local hook_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "hooks")
+for _, file in ipairs(hook_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("hooks/" .. file))()
+    end
+end
 
 -- Jokers
 local joker_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers")
@@ -31,18 +49,3 @@ for _, file in ipairs(ui_src) do
     end
 end
 
--- Functions
-local function_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "functions")
-for _, file in ipairs(function_src) do
-    if string.find(file, "%.lua$") then
-        assert(SMODS.load_file("functions/" .. file))()
-    end
-end
-
--- Hooks
-local hook_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "hooks")
-for _, file in ipairs(hook_src) do
-    if string.find(file, "%.lua$") then
-        assert(SMODS.load_file("hooks/" .. file))()
-    end
-end
