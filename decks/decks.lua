@@ -7,7 +7,7 @@ SMODS.Atlas({
 
 calc_mana_decks = function(self, back, context)
     if context.end_of_round and context.game_over == false and context.main_eval then
-        set_current_mana(WLT.MAGIC.max_mana)
+        set_remaining_mana()
     end
 end
 
@@ -50,6 +50,7 @@ SMODS.Back({
                 add_joker("j_wlt_mana_droplet", nil, k ~= 1)
                 add_joker("j_blueprint", nil, k ~= 1)
                 add_joker("j_wlt_mana_potion", nil, k ~= 1)
+                add_joker("j_wlt_alchemy", nil, k ~= 1)
                 return true
             end
         }))

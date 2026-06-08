@@ -15,6 +15,14 @@ return {
             },
         },
         Joker = {
+            j_wlt_alchemy = {
+                name = "Alchemy",
+                text = {
+                    "Earn {C:money}$#1#{} for each",
+                    "unspent {V:1}Mana{} at",
+                    "the end of the round"
+                },
+            },
             j_wlt_mana_droplet = {
                 name = "Mana Droplet",
                 text = {

@@ -14,6 +14,11 @@ function update_current_mana(change)
     set_current_mana(new_mana)
 end
 
+function set_remaining_mana()
+    WLT.MAGIC.rem_mana = WLT.MAGIC.cur_mana
+    set_current_mana(WLT.MAGIC.max_mana)
+end
+
 function set_play_mana(new_mana)
     if new_mana ~= WLT.MAGIC.play_mana then
         WLT.MAGIC.play_mana = new_mana
