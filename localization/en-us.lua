@@ -46,6 +46,14 @@ return {
                     "hand at start of round",
                 },
             },
+            j_wlt_wizard_tower = {
+                name = "Wizard Tower",
+                text = {
+                    "This Joker gains {C:chips}+#1#{} Chips",
+                    "per mana spent",
+                    "{C:inactive}(Currently {C:Chips}+#2#{} Chips)",
+                },
+            },
         },
     },
     misc = {
