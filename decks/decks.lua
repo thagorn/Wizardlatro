@@ -49,7 +49,7 @@ SMODS.Back({
                 add_joker("j_wlt_mana_droplet", nil, k ~= 1)
                 add_joker("j_wlt_mana_droplet", nil, k ~= 1)
                 add_joker("j_blueprint", nil, k ~= 1)
-                add_joker("j_wlt_wizard_tower", nil, k ~= 1)
+                add_joker("j_wlt_haste_potion", nil, k ~= 1)
                 return true
             end
         }))
