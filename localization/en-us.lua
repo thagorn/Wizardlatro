@@ -92,12 +92,14 @@ return {
     },
     misc = {
         dictionary = {
+            wlt_cast="CAST",
             wlt_cast_ex="Cast!",
             wlt_drank_ex="Drank!",
         },
         v_dictionary = {
             wlt_hand_minus="-#1# Hand",
             wlt_mana_minus="-#1# Mana",
+            wlt_mana_cost="#1# Mana",
             wlt_mana_text="#1#/#2# Mana",
             wlt_soul_warning="Warning! This hand will cost some of your Soul",
         },

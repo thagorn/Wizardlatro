@@ -18,7 +18,10 @@ SMODS.Joker {
     discovered = true,
     rarity = 1, -- TODO
     cost = 0,
-    config = { extra = { xmult = 2 } },
+    config = { 
+        extra_value = -1, -- Allows sell cost to be $0
+        extra = { xmult = 2 }
+    },
     in_pool = function(self, args)
         return false
     end,
