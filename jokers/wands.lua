@@ -11,7 +11,7 @@ SMODS.Joker {
     cost = 5,
     config = { consumeable = { max_highlighted = 5 }, extra = { mana_cost = 2 } }, -- TODO
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = 'e_negative_consumable', set = 'Edition', config = { extra = 1 } }
+        info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {1, colours = { HEX('1400CE')} } }
         info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_fireball
     end,
     calculate = function(self, card, context)

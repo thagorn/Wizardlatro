@@ -79,6 +79,16 @@ return {
                 },
             },
         },
+        Other =  {
+            o_wlt_cast_keyword={
+                name="Cast",
+                text={
+                    "Spend {V:1}#1#{} mana",
+                    "to create a joker"
+                },
+            },
+
+        },
     },
     misc = {
         dictionary = {
