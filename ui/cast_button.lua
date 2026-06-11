@@ -6,9 +6,9 @@ G.FUNCS.on_cast = function(e, mute, nosave)
     local dont_dissolve = nil
     local delay_fac = 1
     
-    if card.children.use_button then card.children.use_button:remove(); card.children.use_button = nil end
+    card:click()
     card.ability.extra.charged = false
-    --if card.children.sell_button then card.children.sell_button:remove(); card.children.sell_button = nil end
+    spend_mana(card.ability.extra.mana_cost)
 
     SMODS.add_card({key = card.ability.extra.spell, no_edition = "true", stickers = nil})
 
@@ -20,6 +20,9 @@ function Card:can_cast(any_state, skip_check)
         return false
     end
     if not self.ability.extra.charged then
+        return false
+    end
+    if not (self.ability.extra.mana_cost <= WLT.MAGIC.cur_mana) then
         return false
     end
     return true
@@ -38,7 +41,7 @@ end
 
 function create_cast_button(card)
     local use = nil
-    if card.ability.extra and card.ability.extra.has_cast then
+    if (type(card.ability.extra) == "table") and card.ability.extra.has_cast then
         use = 
         {n=G.UIT.C, config={align = "cr"}, nodes={
           
