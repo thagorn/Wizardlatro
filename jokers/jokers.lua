@@ -106,7 +106,7 @@ SMODS.Joker {
     end
 }
 
--- Wizard Staff
+-- Wizard Tower
 SMODS.Joker {
     atlas = "jokers",
     pos = { x = 6, y = 0 },

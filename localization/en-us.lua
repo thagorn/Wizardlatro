@@ -23,6 +23,14 @@ return {
                     "the end of the round"
                 },
             },
+            j_wlt_fireball = {
+                name = "Fireball",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult",
+                    "this card is destroyed",
+                    "after a hand is played"
+                },
+            },
             j_wlt_haste_potion = {
                 name = "Haste Potion",
                 text = {
@@ -56,6 +64,12 @@ return {
                     "hand at start of round",
                 },
             },
+            j_wlt_wand_fireball = {
+                name = "Wand of Fireball",
+                text = {
+                    "This Wand casts Fireball",
+                },
+            },
             j_wlt_wizard_tower = {
                 name = "Wizard Tower",
                 text = {
@@ -68,6 +82,7 @@ return {
     },
     misc = {
         dictionary = {
+            wlt_cast_ex="Cast!",
             wlt_drank_ex="Drank!",
         },
         v_dictionary = {
