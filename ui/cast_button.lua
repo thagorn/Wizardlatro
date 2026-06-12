@@ -8,6 +8,9 @@ G.FUNCS.on_cast = function(e, mute, nosave)
     
     card:click()
     card.ability.extra.charged = false
+    if not card.ability.extra.reusable then
+        SMODS.debuff_card(card, true, 'scroll')
+    end
     spend_mana(card.ability.extra.mana_cost)
 
     SMODS.add_card({key = card.ability.extra.spell, no_edition = "true", stickers = nil})
