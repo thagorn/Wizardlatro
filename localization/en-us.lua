@@ -104,7 +104,7 @@ return {
                 text = {
                     "This Joker gains {C:chips}+#1#{} Chips",
                     "per mana spent",
-                    "{C:inactive}(Currently {C:Chips}+#2#{C:inactive} Chips){}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips){}",
                 },
             },
         },
