@@ -1,7 +1,7 @@
 -- Wand of Fireball
 SMODS.Joker {
     atlas = "jokers",
-    pos = { x = 6, y = 1 }, -- TODO
+    pos = { x = 1, y = 1 },
     key = "wand_fireball",
     blueprint_compat = false,
     eternal_compat = false,

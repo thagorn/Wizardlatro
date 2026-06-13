@@ -1,7 +1,7 @@
 -- Fountain of Mana
 SMODS.Joker {
     atlas = "jokers",
-    pos = { x = 3, y = 1 }, -- TODO
+    pos = { x = 5, y = 1 },
     key = "fountain_of_mana",
     blueprint_compat = true,
     eternal_compat = false,

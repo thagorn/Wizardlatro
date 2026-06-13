@@ -10,7 +10,7 @@ end
 -- Fireball
 SMODS.Joker {
     atlas = "jokers",
-    pos = { x = 7, y = 1 }, -- TODO
+    pos = { x = 2, y = 1 },
     key = "fireball",
     blueprint_compat = true,
     eternal_compat = false,
@@ -38,7 +38,7 @@ SMODS.Joker {
 -- Ice Forge
 SMODS.Joker {
     atlas = "jokers",
-    pos = { x = 9, y = 1 }, -- TODO
+    pos = { x = 4, y = 1 },
     key = "iceforge",
     blueprint_compat = true,
     eternal_compat = false,

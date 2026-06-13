@@ -1,7 +1,7 @@
 -- Scroll of Ice Forge
 SMODS.Joker {
     atlas = "jokers",
-    pos = { x = 8, y = 1 }, -- TODO
+    pos = { x = 3, y = 1 },
     key = "scroll_iceforge",
     blueprint_compat = false,
     eternal_compat = false,
