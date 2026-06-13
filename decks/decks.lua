@@ -24,11 +24,11 @@ SMODS.Back({
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
             func = function()
-                add_joker("j_wlt_mana_droplet", nil, k ~= 1)
-                add_joker("j_wlt_mana_droplet", nil, k ~= 1)
-                add_joker("j_wlt_mana_droplet", nil, k ~= 1)
-                add_joker("j_wlt_mana_droplet", nil, k ~= 1)
-                add_joker("j_wlt_mana_droplet", nil, k ~= 1)
+                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 return true
             end
         }))
@@ -45,12 +45,13 @@ SMODS.Back({
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
             func = function()
-                add_joker("j_wlt_mana_droplet", nil, k ~= 1)
-                add_joker("j_wlt_mana_droplet", nil, k ~= 1)
-                add_joker("j_wlt_mana_droplet", nil, k ~= 1)
-                add_joker("j_blueprint", nil, k ~= 1)
-                add_joker("j_wlt_mana_potion", nil, k ~= 1)
-                add_joker("j_wlt_alchemy", nil, k ~= 1)
+                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_wand_fireball", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_scroll_iceforge", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_scroll_iceforge", no_edition="true", stickers=nil})
                 return true
             end
         }))
