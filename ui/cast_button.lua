@@ -12,8 +12,9 @@ G.FUNCS.on_cast = function(e, mute, nosave)
         SMODS.debuff_card(card, true, 'scroll')
     end
     spend_mana(card.ability.extra.mana_cost)
-
     SMODS.add_card({key = card.ability.extra.spell, no_edition = "true", stickers = nil})
+
+    SMODS.calculate_context({cast_spell = true, card = card})
 
     return true
 end

@@ -51,7 +51,7 @@ SMODS.Back({
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_wand_fireball", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_scroll_iceforge", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_scroll_iceforge", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_wizard_staff", no_edition="true", stickers=nil})
                 return true
             end
         }))

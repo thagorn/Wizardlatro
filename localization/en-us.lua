@@ -23,6 +23,10 @@ return {
                     "the end of the round"
                 },
             },
+            j_wlt_empty = {
+                name = "No Spell",
+                text = {},
+            },
             j_wlt_fireball = {
                 name = "Fireball",
                 text = {
@@ -97,6 +101,15 @@ return {
                     "This Wand allows you to",
                     "{C:attention}cast Fireball{} once per",
                     "round for {V:1}#1#{} mana",
+                },
+            },
+            j_wlt_wizard_staff = {
+                name = "Wizard Staff",
+                text = {
+                    "This Joker stores the last",
+                    "spell you've cast and allows",
+                    "you to cast it once",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}){}",
                 },
             },
             j_wlt_wizard_tower = {

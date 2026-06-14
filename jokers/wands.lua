@@ -4,7 +4,7 @@ SMODS.Joker {
     pos = { x = 1, y = 1 },
     key = "wand_fireball",
     blueprint_compat = false,
-    eternal_compat = false,
+    eternal_compat = true,
     unlocked = true,
     discovered = true,
     rarity = 1,
