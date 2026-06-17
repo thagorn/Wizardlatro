@@ -23,6 +23,15 @@ return {
                     "the end of the round"
                 },
             },
+            j_wlt_astromancer = {
+                name = "Astromancer",
+                text = {
+                    "Upgrade level of played",
+                    "{C:attention}poker hand{} if matching",
+                    "{C:planet}Planet{} card is in",
+                    "your {C:attention}consumeable{} area",
+                },
+            },
             j_wlt_empty = {
                 name = "No Spell",
                 text = {},
