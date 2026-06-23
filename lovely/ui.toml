@@ -22,7 +22,7 @@ target = "game.lua"
 pattern = "G.playing_cards = {}"
 position = "before"
 payload = '''
-self.mana_ui = create_mana_UI()
+create_mana_UI()
 '''
 match_indent = true
 times = 1

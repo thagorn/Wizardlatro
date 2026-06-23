@@ -15,15 +15,33 @@ end
 
 function create_mana_UI()
     local m_s = create_mana_sprite()
-    mana_ui = UIBox{
+    G.mana_ui = UIBox{
             definition = 
                 {n=G.UIT.ROOT, config = {align = 'cm', colour = G.C.BLUE, padding = 0.2}, nodes={
                     {n=G.UIT.R, config = {align = 'cm', maxw = 1}, nodes={
-                        {n=G.UIT.O, config={object=m_s}}
+                        {n=G.UIT.O, config={object=m_s}},
                     }}
                 }},
                 config = {}
             }
+    mana_ui_text = UIBox{
+            definition = 
+                {n=G.UIT.ROOT, config= {align = 'cm', colour = G.C.DEFAULT, padding = 0.2}, nodes={ -- TODO s/DEFAULT/CLEAR
+                    {n=G.UIT.R, config = {align = 'cm', maxw = 1}, nodes={
+                        {n=G.UIT.O, config={align = 'cm', object = 
+                            DynaText({scale = 0.6,
+                                string = {{ref_table = WLT.MAGIC, ref_value = 'cur_mana'}},
+                                colours = { G.C.WHITE }
+                            })
+                        }}
+                    }}
+                }},
+                config = {
+                    align = 'cm',
+                    major = G.mana_ui
+                }
+            }
+
     return mana_ui
 end
 
