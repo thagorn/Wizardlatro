@@ -2,6 +2,7 @@
 version = "1.0.0"
 priority = 0
 
+# Cast Button
 [[patches]]
 [patches.pattern]
 target = "functions/UI_definitions.lua"
@@ -9,6 +10,30 @@ pattern = "local use = nil"
 position = "after"
 payload = '''
 use = create_cast_button(card)
+'''
+match_indent = true
+times = 1
+
+
+# Mana Droplet UI
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "G.playing_cards = {}"
+position = "before"
+payload = '''
+self.mana_ui = create_mana_UI()
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "G.hand:hard_set_VT()"
+position = "before"
+payload = '''
+position_mana_UI()
 '''
 match_indent = true
 times = 1
