@@ -1,10 +1,3 @@
-SMODS.Atlas({
-    key = "decks",
-    path = "jokers.png", -- TODO
-    px = 71,
-    py = 95
-})
-
 calc_mana_decks = function(self, back, context)
     if context.end_of_round and context.game_over == false and context.main_eval then
         set_remaining_mana()
