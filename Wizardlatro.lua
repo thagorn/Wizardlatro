@@ -5,6 +5,7 @@ WLT.MAGIC = {
     cur_mana = 5,
     max_mana = 5,
     rem_mana = 0,
+    cur_soul = 5,
     play_mana_text = '',
     play_soul_warning = '',
 }
