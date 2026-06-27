@@ -41,7 +41,7 @@ SMODS.Back({
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
             func = function()
-                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_mana_potion", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})

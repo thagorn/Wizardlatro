@@ -14,7 +14,7 @@ SMODS.Joker {
         extra = { mana = 0 }
     },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mana, colours = { HEX('1400CE') } } }
+        return { vars = { card.ability.extra.mana } }
     end,
     calculate = function(self, card, context)
         if context.first_hand_drawn then

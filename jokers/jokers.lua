@@ -11,7 +11,7 @@ SMODS.Joker {
     cost = 4,
     config = { extra = { mana = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mana, colours = { HEX('1400CE') } } }
+        return { vars = { card.ability.extra.mana } }
     end,
     calculate = function(self, card, context)
         if context.before then
@@ -33,7 +33,7 @@ SMODS.Joker {
     cost = 5,
     config = { extra = { mana_loss = 4, mana = 20 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mana, card.ability.extra.mana_loss, colours = { HEX('1400CE') } } }
+        return { vars = { card.ability.extra.mana, card.ability.extra.mana_loss } }
     end,
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
@@ -47,7 +47,7 @@ SMODS.Joker {
                 card.ability.extra.mana = card.ability.extra.mana - card.ability.extra.mana_loss
                 return {
                     message = localize { type = 'variable', key = 'wlt_mana_minus', vars = { card.ability.extra.mana_loss } },
-                    colour = HEX('1400CE')
+                    colour = G.ARGS.LOC_COLOURS.wlt_mana
                 }
             end
         end
@@ -70,7 +70,7 @@ SMODS.Joker {
     cost = 6,
     config = { extra = { dollars = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.dollars, colours = { HEX('1400CE') } } }
+        return { vars = { card.ability.extra.dollars } }
     end,
     calc_dollar_bonus = function(self, card)
         return WLT.MAGIC.rem_mana * card.ability.extra.dollars
@@ -90,7 +90,7 @@ SMODS.Joker {
     cost = 6,
     config = { extra = { mana = 2 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mana, colours = { HEX('1400CE') } } }
+        return { vars = { card.ability.extra.mana } }
     end,
     calculate = function(self, card, context)
         if context.first_hand_drawn then

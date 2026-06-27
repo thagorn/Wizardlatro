@@ -18,7 +18,7 @@ SMODS.Joker {
                         mana_cost_label = ''
                     } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost, colours = { HEX('1400CE')} } }
+        info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = { card.ability.extra.mana_cost } }
         return { vars = { card.ability.extra.spell_name } }
     end,
     set_ability = function(self, card, initial, delay_sprites)

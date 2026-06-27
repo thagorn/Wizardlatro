@@ -19,7 +19,7 @@ return {
                 name = "Alchemy",
                 text = {
                     "Earn {C:money}$#1#{} for each",
-                    "unspent {V:1}Mana{} at",
+                    "unspent {C:wlt_mana}Mana{} at",
                     "the end of the round"
                 },
             },
@@ -54,7 +54,7 @@ return {
             j_wlt_fountain_of_mana = {
                 name = "Fountain of Mana",
                 text = {
-                    "Gain {V:1}+#1#{} Mana",
+                    "Gain {C:wlt_mana}+#1#{} Mana",
                     "at start of round",
                     "{C:green,s:0.85}Additional summonings will{}",
                     "{C:green,s:0.85}grow your current fountain{}",
@@ -83,23 +83,23 @@ return {
             j_wlt_mana_droplet = {
                 name = "Mana Droplet",
                 text = {
-                    "Gain {V:1}+#1#{} Mana",
+                    "Gain {C:wlt_mana}+#1#{} Mana",
                     "when you play a hand"
                 },
             },
             j_wlt_mana_potion = {
                 name = "Mana Potion",
                 text = {
-                    "Gain {V:1}+#1#{} Mana",
+                    "Gain {C:wlt_mana}+#1#{} Mana",
                     "at start of round",
-                    "{V:1}-#2#{} Mana per",
+                    "{C:wlt_mana}-#2#{} Mana per",
                     "round played",
                 },
             },
             j_wlt_mana_spring = {
                 name = "Mana Spring",
                 text = {
-                    "Gain {V:1}+#1#{} Mana per",
+                    "Gain {C:wlt_mana}+#1#{} Mana per",
                     "hand at start of round",
                 },
             },
@@ -108,7 +108,7 @@ return {
                 text = {
                     "This Scroll allows you",
                     "to {C:attention}cast Ice Forge{}",
-                    "once for {V:1}#1#{} mana",
+                    "once for {C:wlt_mana}#1#{} mana",
                 },
             },
             j_wlt_wand_fireball = {
@@ -116,7 +116,7 @@ return {
                 text = {
                     "This Wand allows you to",
                     "{C:attention}cast Fireball{} once per",
-                    "round for {V:1}#1#{} mana",
+                    "round for {C:wlt_mana}#1#{} mana",
                 },
             },
             j_wlt_wizard_staff = {
@@ -141,7 +141,7 @@ return {
             o_wlt_cast_keyword={
                 name="Cast",
                 text={
-                    "Spend {V:1}#1#{} mana",
+                    "Spend {C:wlt_mana}#1#{} mana",
                     "to create a joker"
                 },
             },
