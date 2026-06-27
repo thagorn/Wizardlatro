@@ -23,6 +23,13 @@ return {
                     "the end of the round"
                 },
             },
+            j_wlt_archmage = {
+                name = "Archmage",
+                text = {
+                    "{X:wlt_spell,C:red}Spell{} Jokers",
+                    "each give {X:mult,C:white} X#1# {} Mult",
+                },
+            },
             j_wlt_astromancer = {
                 name = "Astromancer",
                 text = {

@@ -46,11 +46,12 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_wand_fireball", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_astromancer", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_archmage", no_edition="true", stickers=nil})
                 return true
             end
         }))
         apply_mana_decks(self, back)
+        sendInfoMessage(inspectDepth(G.ARGS.LOC_COLOURS))
     end,
     calculate = calc_mana_decks,
 })
