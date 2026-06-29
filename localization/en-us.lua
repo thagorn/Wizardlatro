@@ -48,6 +48,14 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_coven_of_the_meek = {
+                name = "Coven of the Meek",
+                text = {
+                    "This Joker casts",
+                    "{C:attention}Power of Many{} when",
+                    "each played {C:attention}3{} is scored"
+                },
+            },
             j_wlt_crossbow = {
                 name = "Crossbow",
                 text = {
@@ -158,6 +166,14 @@ return {
                 text = {
                     "Always draw {C:attention}#1#{} cards",
                     "after playing a hand",
+                },
+            },
+            j_wlt_power_of_many = {
+                name = "Power of Many",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
                 },
             },
             j_wlt_ray_of_wood = {
