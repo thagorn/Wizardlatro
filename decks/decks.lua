@@ -38,7 +38,7 @@ SMODS.Back({
     config = { 
         max_mana = 5,
         max_soul = 5,
-        consumables = { "c_jupiter" },
+        consumables = { "c_tower", "c_tower" },
     },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
@@ -47,8 +47,7 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_sparking_wand", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_wizard_staff", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_golemancer", no_edition="true", stickers=nil})
                 return true
             end
         }))

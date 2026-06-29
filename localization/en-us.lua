@@ -97,6 +97,17 @@ return {
                     "{C:green,s:0.85}grow your current fountain{}",
                 },
             },
+            j_wlt_golemancer = {
+                name = "Golemancer",
+                text = {
+                    "Each {C:attention}Stone Card{}",
+                    "held in hand gives",
+                    "{C:mult}+#1#{} Mult for each",
+                    "{C:attention}Stone Card{} in",
+                    "your {C:attention}full deck{}",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+                },
+            },
             j_wlt_haste_potion = {
                 name = "Haste Potion",
                 text = {
