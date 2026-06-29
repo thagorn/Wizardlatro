@@ -46,7 +46,8 @@ SMODS.Joker {
                 trigger = 'after',
                 delay = 0.3,
                 func = (function()
-                    SMODS.add_card({set = 'Enhanced', key_append = 'wlt_polymorph'})
+                    local new_card = SMODS.add_card({set = 'Enhanced', key_append = 'wlt_polymorph'})
+                    SMODS.calculate_context({ playing_card_added = true, cards = { new_card } })
                     return true
                 end)
             }))
