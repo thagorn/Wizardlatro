@@ -1,27 +1,18 @@
--- Wand of Chain Lightning
+-- Wand of Draining
 SMODS.Joker {
     atlas = "jokers",
-    pos = { x = 1, y = 3 },
-    key = "wand_chain_lightning",
+    pos = { x = 8, y = 0 },
+    key = "wand_draining",
     blueprint_compat = false,
     eternal_compat = true,
     unlocked = true,
     discovered = true,
     rarity = 1,
-    cost = 4,
-    config = { extra = { 
-        has_cast = true,
-        charged = true,
-        reusable = true,
-        spell = 'j_wlt_chain_lightning',
-        base_mana_cost = 1,
-        mana_cost_multiplier = 2,
-        mana_cost = 1,
-        mana_cost_label = ''
-    } },
+    cost = 6,
+    config = { extra = { has_cast = true, charged = true, reusable = true, spell = 'j_wlt_drain', mana_cost = 3, mana_cost_label = '' } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost } }
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_chain_lightning
+        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_drain
         return { vars = { card.ability.extra.mana_cost } }
     end,
     set_ability = function(self, card, initial, delay_sprites)
@@ -32,23 +23,17 @@ SMODS.Joker {
                                             })
     end,
     calculate = function(self, card, context)
-        if context.cast_spell and (card == context.card) then
-            card.ability.extra.charged = true
-            card.ability.extra.mana_cost = card.ability.extra.mana_cost * card.ability.extra.mana_cost_multiplier
-            self:set_ability(card, false, false)
-        end
         if context.end_of_round and context.main_eval then
-            card.ability.extra.mana_cost = card.ability.extra.base_mana_cost
-            self:set_ability(card, false, false)
+            card.ability.extra.charged = true
         end
     end
 }
 
--- Chain Lightning
+-- Drain
 SMODS.Joker {
     atlas = "jokers",
-    pos = { x = 2, y = 3 },
-    key = "chain_lightning",
+    pos = { x = 9, y = 0 },
+    key = "drain",
     blueprint_compat = true,
     eternal_compat = false,
     unlocked = true,
@@ -57,19 +42,35 @@ SMODS.Joker {
     cost = 0,
     config = { 
         extra_value = -1, -- Allows sell cost to be $0
-        extra = { repetitions = 1, position = 0 }
+        extra = { rank_change = 1 }
     },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.repetitions } }
+        return { vars = { card.ability.extra.rank_change } }
     end,
     calculate = function(self, card, context)
         calc_spell_cast(self, card, context)
         if context.before then
-            card.ability.extra.position = pseudorandom('wlt_chain_lightning', 1, #context.scoring_hand)
-        end
-        if context.repetition and context.cardarea == G.play and context.other_card == context.scoring_hand[card.ability.extra.position] then
+            for _, played_card in ipairs(context.scoring_hand) do
+                assert(SMODS.modify_rank(played_card, card.ability.extra.rank_change, true))
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						played_card:set_sprites(nil, played_card.config.card)
+						return true
+					end
+				}))
+            end
+            for _, hand_card in ipairs(G.hand.cards) do
+                assert(SMODS.modify_rank(hand_card, -1 * card.ability.extra.rank_change, true))
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						hand_card:set_sprites(nil, hand_card.config.card)
+						return true
+					end
+				}))
+            end
             return {
-                repetitions = card.ability.extra.repetitions
+                message = localize('wlt_drained_ex'),
+                colour = HEX('230933')
             }
         end
     end

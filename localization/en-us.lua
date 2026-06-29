@@ -48,6 +48,18 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_drain = {
+                name = "Drain",
+                text = {
+                    "Increases rank of",
+                    "all scored cards by {C:attention}#1#{}",
+                    "and decreases rank",
+                    "of all cards held",
+                    "in hand by {C:attention}#1#{}",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_empty = {
                 name = "No Spell",
                 text = {},
@@ -138,6 +150,14 @@ return {
                     "{s:0.85}double the {C:wlt_mana}mana{} cost{}",
                 },
             },
+            j_wlt_wand_draining = {
+                name = "Wand of Draining",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Drain{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
             j_wlt_wand_fireball = {
                 name = "Wand of Fireball",
                 text = {
@@ -189,6 +209,7 @@ return {
             k_wlt_summon="Summon",
             wlt_cast="CAST",
             wlt_cast_ex="Cast!",
+            wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
         },
         labels = {
