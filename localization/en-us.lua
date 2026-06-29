@@ -133,6 +133,18 @@ return {
                     "hand at start of round",
                 },
             },
+            j_wlt_polymorph = {
+                name = "Polymorph",
+                text = {
+                    "When you play a hand",
+                    "destroy all scoring cards",
+                    "and add that many",
+                    "random {C:attention}enhanced{} cards",
+                    "to your hand",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_ponder = {
                 name = "Ponder",
                 text = {
@@ -145,6 +157,14 @@ return {
                 text = {
                     "This Scroll allows you",
                     "to {C:attention}cast Ice Forge{}",
+                    "once for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_scroll_polymorph = {
+                name = "Scroll of Polymorph",
+                text = {
+                    "This Scroll allows you",
+                    "to {C:attention}cast Polymorph{}",
                     "once for {C:wlt_mana}#1#{} mana",
                 },
             },
@@ -218,6 +238,7 @@ return {
             wlt_cast_ex="Cast!",
             wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
+            wlt_poof_ex="Poof!",
         },
         labels = {
             k_wlt_spell="Spell",

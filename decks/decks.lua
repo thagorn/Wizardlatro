@@ -7,13 +7,14 @@ end
 apply_mana_decks = function(self, back)
     set_max_mana(self.config.max_mana)
     set_current_mana(self.config.max_mana)
+    set_current_soul(self.config.max_soul)
 end
 
 SMODS.Back({
     key = "mana",
     pos = { x = 0, y = 0 },
     atlas = "decks",
-    config = { max_mana = 5 },
+    config = { max_mana = 5, max_soul = 5 },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
             func = function()
@@ -36,6 +37,7 @@ SMODS.Back({
     atlas = "decks",
     config = { 
         max_mana = 5,
+        max_soul = 5,
         consumables = { "c_jupiter" },
     },
     apply = function(self, back)
@@ -45,12 +47,11 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_ponder", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_scroll_polymorph", no_edition="true", stickers=nil})
                 return true
             end
         }))
         apply_mana_decks(self, back)
-        sendInfoMessage(inspectDepth(G.ARGS.LOC_COLOURS))
     end,
     calculate = calc_mana_decks,
 })
