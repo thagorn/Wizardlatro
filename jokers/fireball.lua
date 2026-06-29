@@ -28,3 +28,31 @@ SMODS.Joker {
         end
     end
 }
+
+-- Fireball
+SMODS.Joker {
+    atlas = "jokers",
+    pos = { x = 2, y = 1 },
+    key = "fireball",
+    blueprint_compat = true,
+    eternal_compat = false,
+    unlocked = true,
+    discovered = true,
+    rarity = 'wlt_spell',
+    cost = 0,
+    config = { 
+        extra_value = -1, -- Allows sell cost to be $0
+        extra = { xmult = 2 }
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.xmult } }
+    end,
+    calculate = function(self, card, context)
+        calc_spell_cast(self, card, context)
+        if context.joker_main then
+            return {
+                xmult = card.ability.extra.xmult,
+            }
+        end
+    end
+}
