@@ -133,6 +133,13 @@ return {
                     "hand at start of round",
                 },
             },
+            j_wlt_ponder = {
+                name = "Ponder",
+                text = {
+                    "Always draw {C:attention}#1#{} cards",
+                    "after playing a hand",
+                },
+            },
             j_wlt_scroll_iceforge = {
                 name = "Scroll of Ice Forge",
                 text = {
