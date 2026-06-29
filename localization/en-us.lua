@@ -48,6 +48,14 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_crossbow = {
+                name = "Crossbow",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Ray of Wood{}",
+                    "once per hand for {C:wlt_mana}#1#{} mana",
+                },
+            },
             j_wlt_drain = {
                 name = "Drain",
                 text = {
@@ -67,7 +75,7 @@ return {
             j_wlt_fireball = {
                 name = "Fireball",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult",
+                    "{X:mult,C:white}X#1#{} Mult",
                     "{C:red,s:0.85}this card is destroyed{}",
                     "{C:red,s:0.85}after a hand is played{}"
                 },
@@ -150,6 +158,14 @@ return {
                 text = {
                     "Always draw {C:attention}#1#{} cards",
                     "after playing a hand",
+                },
+            },
+            j_wlt_ray_of_wood = {
+                name = "Ray of Wood",
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
                 },
             },
             j_wlt_scroll_iceforge = {
