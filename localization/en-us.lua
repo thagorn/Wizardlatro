@@ -39,6 +39,15 @@ return {
                     "your {C:attention}consumeable{} area",
                 },
             },
+            j_wlt_chain_lightning = {
+                name = "Chain Lightning",
+                text = {
+                    "Retrigger a random",
+                    "played card",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_empty = {
                 name = "No Spell",
                 text = {},
@@ -118,6 +127,15 @@ return {
                     "This Scroll allows you",
                     "to {C:attention}cast Ice Forge{}",
                     "once for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_chain_lightning = {
+                name = "Wand of Chain Lightning",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Chain Lightning{} for {C:wlt_mana}#1#{} mana",
+                    "{s:0.85}Additional casts in a round{}",
+                    "{s:0.85}double the {C:wlt_mana}mana{} cost{}",
                 },
             },
             j_wlt_wand_fireball = {
