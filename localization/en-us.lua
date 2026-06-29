@@ -184,6 +184,15 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_revolution = {
+                name = "Revolution",
+                text = {
+                    "{C:attention}Face{} cards are no longer",
+                    "considered {C:attention}face{} cards",
+                    "and {C:attention}non-Face{} cards",
+                    "are now considerd {C:attention}face{} cards{}"
+                },
+            },
             j_wlt_scroll_iceforge = {
                 name = "Scroll of Ice Forge",
                 text = {
