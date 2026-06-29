@@ -13,7 +13,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost } }
         info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_power_of_many
-        return { vars = { card.ability.extra.mana_cost } }
+        return
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and context.other_card:get_id() == 3 and not context.blueprint then

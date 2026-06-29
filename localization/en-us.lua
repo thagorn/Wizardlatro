@@ -209,6 +209,13 @@ return {
                     "once for {C:wlt_mana}#1#{} mana",
                 },
             },
+            j_wlt_sparking_wand = {
+                name = "Sparking Wand",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "cast a random {X:wlt_spell,C:red}Spell{}",
+                },
+            },
             j_wlt_wand_chain_lightning = {
                 name = "Wand of Chain Lightning",
                 text = {
@@ -246,7 +253,7 @@ return {
                 name = "Wizard Staff",
                 text = {
                     "This Joker stores the last",
-                    "spell you've cast and allows",
+                    "{X:wlt_spell,C:red}Spell{} you've cast and allows",
                     "you to cast it once",
                     "{C:inactive}(Currently {C:attention}#1#{C:inactive}){}",
                 },
