@@ -80,6 +80,15 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_lightning_bolt = {
+                name = "Lightning Bolt",
+                text = {
+                    "Retrigger all",
+                    "played cards",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_mana_droplet = {
                 name = "Mana Droplet",
                 text = {
@@ -116,6 +125,14 @@ return {
                 text = {
                     "This Wand allows you to",
                     "{C:attention}cast Fireball{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_lightning_bolt = {
+                name = "Wand of Lightning Bolt",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Lightning Bolt{} once per",
                     "round for {C:wlt_mana}#1#{} mana",
                 },
             },
