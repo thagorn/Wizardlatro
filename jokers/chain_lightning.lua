@@ -65,7 +65,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         calc_spell_cast(self, card, context)
         if context.before then
-            card.ability.extra.position = pseudorandom('wlt_chain_lightning', 1, #context.scoring_hand)
+            card.ability.extra.position = pseudorandom('j_wlt_chain_lightning', 1, #context.scoring_hand)
         end
         if context.repetition and context.cardarea == G.play and context.other_card == context.scoring_hand[card.ability.extra.position] then
             return {

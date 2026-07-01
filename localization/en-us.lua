@@ -227,6 +227,14 @@ return {
                     "cast a random {X:wlt_spell,C:red}Spell{}",
                 },
             },
+            j_wlt_succession_crisis = {
+                name = "Succession Crisis",
+                text = {
+                    "Played {C:attention}Face{} cards give {X:mult,C:white}X#1#{} Mult",
+                    "Played {C:attention}Face{} cards of the",
+                    "same rank debuff each other",
+                },
+            },
             j_wlt_wand_chain_lightning = {
                 name = "Wand of Chain Lightning",
                 text = {
