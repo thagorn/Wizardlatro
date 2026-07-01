@@ -31,6 +31,10 @@ SMODS.Joker {
         end
         if context.first_hand_drawn then
             update_current_mana(card.ability.extra.mana)
+            return {
+                message = localize { type = 'variable', key = 'wlt_mana_plus', vars = { card.ability.extra.mana } },
+                colour = G.ARGS.LOC_COLOURS.wlt_mana
+            }
         end
     end
 }

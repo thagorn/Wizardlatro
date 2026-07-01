@@ -235,6 +235,14 @@ return {
                     "same rank debuff each other",
                 },
             },
+            j_wlt_time_stretch = {
+                name = "Time Stretch",
+                text = {
+                    "Gain {C:blue}+#1#{} Hand",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_wand_chain_lightning = {
                 name = "Wand of Chain Lightning",
                 text = {
@@ -266,6 +274,15 @@ return {
                     "This Wand allows you to",
                     "{C:attention}cast Lightning Bolt{} once per",
                     "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_time_stretch = {
+                name = "Wand of Time Stretch",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Time Stretch{} for {C:wlt_mana}#1#{} mana",
+                    "{s:0.85}Additional casts in a round{}",
+                    "{s:0.85}double the {C:wlt_mana}mana{} cost{}",
                 },
             },
             j_wlt_wizard_staff = {
@@ -314,6 +331,7 @@ return {
         v_dictionary = {
             wlt_hand_minus="-#1# Hand",
             wlt_mana_minus="-#1# Mana",
+            wlt_mana_plus="+#1# Mana",
             wlt_mana_cost="#1# Mana",
             wlt_mana_text="#1#/#2# Mana",
             wlt_soul_warning="Warning! This hand will cost some of your Soul",
