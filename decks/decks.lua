@@ -47,12 +47,15 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_wand_time_stretch", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_burglar", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_power_of_three", no_edition="true", stickers=nil})
                 return true
             end
         }))
         apply_mana_decks(self, back)
     end,
+    --initial_deck = {
+        --ranks = { 'Ace', '2', '3', '4', '5' },
+        --suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds' }
+    --},
     calculate = calc_mana_decks,
 })

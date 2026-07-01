@@ -12,3 +12,7 @@ calc_spell_cast = function(self, card, context)
         end
     end
 end
+
+SMODS.current_mod.reset_game_globals = function(run_start)
+    reset_wlt_power_of_three()
+end

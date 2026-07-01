@@ -187,6 +187,17 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_power_of_three = {
+                name = "Power of Three",
+                text = {
+                    "Gain {C:wlt_mana}+#1#{} Mana",
+                    "at start of round",
+                    "Increases by {C:wlt_mana}#2#{} Mana",
+                    "if played hand contains a ",
+                    "{C:attention}Three of a Kind #3#s{}",
+                    "rank changes every round"
+                },
+            },
             j_wlt_ray_of_wood = {
                 name = "Ray of Wood",
                 text = {
@@ -200,7 +211,7 @@ return {
                 text = {
                     "{C:attention}Face{} cards are no longer",
                     "considered {C:attention}face{} cards",
-                    "and {C:attention}non-Face{} cards",
+                    "and {C:attention}non-face{} cards",
                     "are now considerd {C:attention}face{} cards{}"
                 },
             },
