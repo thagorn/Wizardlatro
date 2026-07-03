@@ -47,8 +47,7 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_trousers", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_scroll_ritual_1", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_health_potion", no_edition="true", stickers=nil})
                 return true
             end
         }))

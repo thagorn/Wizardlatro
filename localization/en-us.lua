@@ -130,6 +130,13 @@ return {
                     "each round",
                 },
             },
+            j_wlt_health_potion = {
+                name = "Health Potion",
+                text = {
+                    "Sell this card to",
+                    "gain {C:wlt_soul}#1# Soul{}",
+                },
+            },
             j_wlt_iceforge = {
                 name = "Ice Forge",
                 text = {
