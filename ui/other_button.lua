@@ -1,10 +1,6 @@
 G.FUNCS.on_button = function(e, mute, nosave)
     e.config.button = nil
     local card = e.config.ref_table
-    local area = card.area
-    local prev_state = G.STATE
-    local dont_dissolve = nil
-    local delay_fac = 1
     
     card:click()
     card.config.center:button_click(card)
