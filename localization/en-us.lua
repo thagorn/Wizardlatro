@@ -128,6 +128,15 @@ return {
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 },
             },
+            j_wlt_graduation = {
+                name = "Graduation",
+                text = {
+                    "If {C:attention}first discard{} of round",
+                    "has exactly {C:attention}2{} cards,",
+                    "convert the rank of the {C:attention}left{} card",
+                    "into the rank of the {C:attention}right{} card",
+                },
+            },
             j_wlt_haste_potion = {
                 name = "Haste Potion",
                 text = {
