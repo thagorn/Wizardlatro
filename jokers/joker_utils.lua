@@ -15,4 +15,5 @@ end
 
 SMODS.current_mod.reset_game_globals = function(run_start)
     reset_wlt_power_of_three()
+    reset_wlt_ritual_condition()
 end

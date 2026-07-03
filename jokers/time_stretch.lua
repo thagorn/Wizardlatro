@@ -39,7 +39,7 @@ SMODS.Joker {
             card.ability.extra.mana_cost = card.ability.extra.mana_cost * card.ability.extra.mana_cost_multiplier
             self:set_ability(card, false, false)
         end
-        if context.end_of_round and context.main_eval then
+        if context.end_of_round and context.main_eval and not context.game_over then
             card.ability.extra.mana_cost = card.ability.extra.base_mana_cost
             self:set_ability(card, false, false)
         end

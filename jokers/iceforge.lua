@@ -49,10 +49,13 @@ SMODS.Joker {
             local fountain_search = SMODS.find_card('j_wlt_fountain_of_mana', true)
             local _, fountain = next(fountain_search)
             if not fountain then
-                fountain = SMODS.add_card({key = card.ability.extra.summon, no_edition = "true", stickers = nil})
+                fountain = SMODS.add_card({key = card.ability.extra.summon, stickers = nil})
             end
             fountain.ability.extra.mana = fountain.ability.extra.mana + remaining_mana
             spend_mana(remaining_mana)
+            return {
+                message = localize('wlt_summon_ex')
+            }
         end
         calc_spell_cast(self, card, context)
     end

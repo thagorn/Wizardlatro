@@ -64,6 +64,18 @@ return {
                     "once per hand for {C:wlt_mana}#1#{} mana",
                 },
             },
+            j_wlt_djinn = {
+                name = "Djinn",
+                text = {
+                    "Grants {C:attention}#1#{} increasingly rare wishes",
+                    "{C:inactive}(Must have room){}",
+                    "{C:inactive}Wish is currently {}{V:1}#2#{}",
+                    "wish changes every round",
+                    "{C:inactive}({C:attention}#3#{C:inactive} remaining wishes){}",
+
+
+                },
+            },
             j_wlt_drain = {
                 name = "Drain",
                 text = {
@@ -215,6 +227,24 @@ return {
                     "are now considerd {C:attention}face{} cards{}"
                 },
             },
+            j_wlt_ritual_1 = {
+                name = "Summoning Ritual Step 1",
+                text = {
+                    "Begin the ritual...",
+                },
+            },
+            j_wlt_ritual_2 = {
+                name = "Summoning Ritual Step 2",
+                text = {
+                    "Progress the ritual...",
+                },
+            },
+            j_wlt_ritual_3 = {
+                name = "Summoning Ritual Step 3",
+                text = {
+                    "Summons a Djinn",
+                },
+            },
             j_wlt_scroll_iceforge = {
                 name = "Scroll of Ice Forge",
                 text = {
@@ -229,6 +259,29 @@ return {
                     "This Scroll allows you",
                     "to {C:attention}cast Polymorph{}",
                     "once for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_scroll_ritual_1 = {
+                name = "Scroll of Summoning Ritual Step 1",
+                text = {
+                    "Play a hand containing the",
+                    "{C:attention}#1#{} of {V:1}#2#{} and",
+                    "the {C:attention}#3#{} of {V:2}#4#{}",
+                    "{C:attention}#7#{} times to {C:attention}cast Summoning Ritual Step 1{}",
+                    "once for {C:wlt_mana}#5#{} mana",
+                    "{s:0.8}Cards change every round",
+                    "{C:inactive}(Currently {C:attention}#6#{C:inactive} of {C:attention}#7#{C:inactive}){}",
+                },
+            },
+            j_wlt_scroll_ritual_3 = {
+                name = "Scroll of Summoning Ritual Step 3",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "destroy {C:attention}ALL{} Jokers to the right.",
+                    "Destroy a {C:common}Common{}, an {C:uncommon}Uncommon{}, and a {C:rare}Rare{}",
+                    "to {C:attention}cast Summoning Ritual Step 2{}",
+                    "once for {C:wlt_mana}#1#{} mana",
+                    "{C:inactive}(Still need: #2#){}",
                 },
             },
             j_wlt_sparking_wand = {
@@ -331,9 +384,13 @@ return {
             k_wlt_summon="Summon",
             wlt_cast="CAST",
             wlt_cast_ex="Cast!",
+            wlt_draws_nearer="It Draws Nearer",
+            wlt_chant_ex="Chant!",
             wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
             wlt_poof_ex="Poof!",
+            wlt_summon_ex="Summon!",
+            wlt_wish="WISH",
         },
         labels = {
             k_wlt_spell="Spell",

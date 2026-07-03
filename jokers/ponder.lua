@@ -23,7 +23,7 @@ SMODS.Joker {
                 cards_to_draw = card.ability.extra.cards
             }
         end
-        if context.end_of_round then
+        if context.end_of_round and context.main_eval and not context.game_over then
             card.ability.extra.active = false
         end
     end

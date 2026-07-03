@@ -23,7 +23,7 @@ SMODS.Joker {
                                             })
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and context.main_eval then
+        if context.end_of_round and context.main_eval and not context.game_over then
             card.ability.extra.charged = true
         end
     end

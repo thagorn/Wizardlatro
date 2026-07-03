@@ -14,7 +14,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.mana, card.ability.extra.mana_loss } }
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+        if context.end_of_round and context.main_eval and not context.game_over and not context.blueprint then
             if card.ability.extra.mana <= card.ability.extra.mana_loss then
                 SMODS.destroy_cards(card, nil, nil, true)
                 return {

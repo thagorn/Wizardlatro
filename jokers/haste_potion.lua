@@ -20,7 +20,7 @@ SMODS.Joker {
         G.GAME.round_resets.hands = G.GAME.round_resets.hands + card.ability.extra.hand_loss
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+        if context.end_of_round and context.main_eval and not context.game_over and not context.blueprint then
             if G.GAME.round_resets.hands <= card.ability.extra.hand_loss_mod then
                 SMODS.destroy_cards(card, nil, nil, true)
                 return {

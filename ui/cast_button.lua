@@ -44,9 +44,9 @@ end
 
 
 function create_cast_button(card)
-    local use = nil
+    local cast = nil
     if (type(card.ability.extra) == "table") and card.ability.extra.has_cast then
-        use = 
+        cast =
         {n=G.UIT.C, config={align = "cr"}, nodes={
           
           {n=G.UIT.C, config={ref_table = card, align = "cr",maxw = 1.25, padding = 0.1, r=0.08, minw = 1.25, minh = (card.area and card.area.config.type == 'joker') and 0 or 1, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = true, button = 'on_cast', func = 'can_cast'}, nodes={
@@ -62,5 +62,5 @@ function create_cast_button(card)
           }}
         }}
     end
-    return use
+    return cast
 end
