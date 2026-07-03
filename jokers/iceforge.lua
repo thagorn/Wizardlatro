@@ -12,7 +12,7 @@ SMODS.Joker {
     config = { extra = { has_cast = true, charged = true, reusable = false, spell = 'j_wlt_iceforge', mana_cost = 2, mana_cost_label = '' } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost } }
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_iceforge
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.spell]
         return { vars = { card.ability.extra.mana_cost } }
     end,
     set_ability = function(self, card, initial, delay_sprites)
@@ -40,7 +40,7 @@ SMODS.Joker {
         extra = { summon = 'j_wlt_fountain_of_mana' }
     },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_fountain_of_mana
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.summon]
         return { vars = {} }
     end,
     calculate = function(self, card, context)

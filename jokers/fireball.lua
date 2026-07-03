@@ -12,7 +12,7 @@ SMODS.Joker {
     config = { extra = { has_cast = true, charged = true, reusable = true, spell = 'j_wlt_fireball', mana_cost = 2, mana_cost_label = '' } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost } }
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_fireball
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.spell]
         return { vars = { card.ability.extra.mana_cost } }
     end,
     set_ability = function(self, card, initial, delay_sprites)

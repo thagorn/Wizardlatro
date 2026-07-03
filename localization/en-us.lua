@@ -322,6 +322,7 @@ return {
                 name = "Sparking Wand",
                 text = {
                     "When {C:attention}Blind{} is selected,",
+                    "{C:green}#1# in #2#{} chance to",
                     "cast a random {X:wlt_spell,C:red}Spell{}",
                 },
             },

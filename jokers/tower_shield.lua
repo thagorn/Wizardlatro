@@ -13,6 +13,14 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return { vars = {} }
     end,
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_stone') then
+                return true
+            end
+        end
+        return false
+    end,
     calculate = function(self, card, context)
         if context.before then
             local firstStone = nil

@@ -12,7 +12,7 @@ SMODS.Joker {
     config = { extra = { spell = 'j_wlt_power_of_many', mana_cost = 0, queued = 0 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost } }
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_power_of_many
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.spell]
         return
     end,
     calculate = function(self, card, context)
