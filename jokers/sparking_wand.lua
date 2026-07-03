@@ -24,7 +24,7 @@ SMODS.Joker {
                         key_appent = 'wlt_sparking_wand'
                     }
                     card.ability.extra.spell = spell.label
-                    SMODS.calculate_context({cast_spell = true, card = card})
+                    spell_cast(card)
                     return true
                 end)
             }))

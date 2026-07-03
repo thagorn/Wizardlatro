@@ -27,7 +27,7 @@ SMODS.Joker {
             for i = 1, card.ability.extra.queued, 1 do
                 spell = SMODS.add_card({key = card.ability.extra.spell, no_edition = "true", stickers = nil})
                 spell.ability.extra.fresh = true
-                SMODS.calculate_context({cast_spell = true, card = card})
+                spell_cast(card)
             end
             card.ability.extra.queued = 0
         end

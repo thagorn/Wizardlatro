@@ -53,9 +53,6 @@ SMODS.Joker {
             end
             fountain.ability.extra.mana = fountain.ability.extra.mana + remaining_mana
             spend_mana(remaining_mana)
-            return {
-                message = localize('wlt_summon_ex')
-            }
         end
         calc_spell_cast(self, card, context)
     end

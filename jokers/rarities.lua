@@ -21,4 +21,5 @@ SMODS.Rarity {
         ["Joker"] = { weight = 1 }
     },
     badge_colour = HEX('43452a'),
+    disable_if_empty = true
 }

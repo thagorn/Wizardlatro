@@ -48,6 +48,14 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_conjurer = {
+                name = "Conjurer",
+                text = {
+                    "{C:red}+#1#{} Mult per {X:wlt_spell,C:red}spell{}",
+                    "cast this run",
+                    "{C:inactive}(Currently {C:red}+#2#{C:inactive})"
+                },
+            },
             j_wlt_coven_of_the_meek = {
                 name = "Coven of the Meek",
                 text = {
