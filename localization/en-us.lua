@@ -19,8 +19,15 @@ return {
                 name = "Alchemy",
                 text = {
                     "Earn {C:money}$#1#{} for each",
-                    "unspent {V:1}Mana{} at",
+                    "unspent {C:wlt_mana}Mana{} at",
                     "the end of the round"
+                },
+            },
+            j_wlt_archmage = {
+                name = "Archmage",
+                text = {
+                    "{X:wlt_spell,C:red}Spell{} Jokers",
+                    "each give {X:mult,C:white} X#1# {} Mult",
                 },
             },
             j_wlt_astromancer = {
@@ -32,6 +39,63 @@ return {
                     "your {C:attention}consumeable{} area",
                 },
             },
+            j_wlt_chain_lightning = {
+                name = "Chain Lightning",
+                text = {
+                    "Retrigger a random",
+                    "played card",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
+            j_wlt_conjurer = {
+                name = "Conjurer",
+                text = {
+                    "{C:red}+#1#{} Mult per {X:wlt_spell,C:red}spell{}",
+                    "cast this run",
+                    "{C:inactive}(Currently {C:red}+#2#{C:inactive})"
+                },
+            },
+            j_wlt_coven_of_the_meek = {
+                name = "Coven of the Meek",
+                text = {
+                    "This Joker casts",
+                    "{C:attention}Power of Many{} when",
+                    "each played {C:attention}3{} is scored"
+                },
+            },
+            j_wlt_crossbow = {
+                name = "Crossbow",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Ray of Wood{}",
+                    "once per hand for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_djinn = {
+                name = "Djinn",
+                text = {
+                    "Grants {C:attention}#1#{} increasingly rare wishes",
+                    "{C:inactive}(Must have room){}",
+                    "{C:inactive}Wish is currently {}{V:1}#2#{}",
+                    "wish changes every round",
+                    "{C:inactive}({C:attention}#3#{C:inactive} remaining wishes){}",
+
+
+                },
+            },
+            j_wlt_drain = {
+                name = "Drain",
+                text = {
+                    "Increases rank of",
+                    "all scored cards by {C:attention}#1#{}",
+                    "and decreases rank",
+                    "of all cards held",
+                    "in hand by {C:attention}#1#{}",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_empty = {
                 name = "No Spell",
                 text = {},
@@ -39,7 +103,7 @@ return {
             j_wlt_fireball = {
                 name = "Fireball",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult",
+                    "{X:mult,C:white}X#1#{} Mult",
                     "{C:red,s:0.85}this card is destroyed{}",
                     "{C:red,s:0.85}after a hand is played{}"
                 },
@@ -47,10 +111,30 @@ return {
             j_wlt_fountain_of_mana = {
                 name = "Fountain of Mana",
                 text = {
-                    "Gain {V:1}+#1#{} Mana",
+                    "Gain {C:wlt_mana}+#1#{} Mana",
                     "at start of round",
                     "{C:green,s:0.85}Additional summonings will{}",
                     "{C:green,s:0.85}grow your current fountain{}",
+                },
+            },
+            j_wlt_golemancer = {
+                name = "Golemancer",
+                text = {
+                    "Each {C:attention}Stone Card{}",
+                    "held in hand gives",
+                    "{C:mult}+#1#{} Mult for each",
+                    "{C:attention}Stone Card{} in",
+                    "your {C:attention}full deck{}",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+                },
+            },
+            j_wlt_graduation = {
+                name = "Graduation",
+                text = {
+                    "If {C:attention}first discard{} of round",
+                    "has exactly {C:attention}2{} cards,",
+                    "convert the rank of the {C:attention}left{} card",
+                    "into the rank of the {C:attention}right{} card",
                 },
             },
             j_wlt_haste_potion = {
@@ -63,6 +147,13 @@ return {
                     "each round",
                 },
             },
+            j_wlt_health_potion = {
+                name = "Health Potion",
+                text = {
+                    "Sell this card to",
+                    "gain {C:wlt_soul}#1# Soul{}",
+                },
+            },
             j_wlt_iceforge = {
                 name = "Ice Forge",
                 text = {
@@ -73,27 +164,109 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_lightning_bolt = {
+                name = "Lightning Bolt",
+                text = {
+                    "Retrigger all",
+                    "played cards",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_mana_droplet = {
                 name = "Mana Droplet",
                 text = {
-                    "Gain {V:1}+#1#{} Mana",
+                    "Gain {C:wlt_mana}+#1#{} Mana",
                     "when you play a hand"
                 },
             },
             j_wlt_mana_potion = {
                 name = "Mana Potion",
                 text = {
-                    "Gain {V:1}+#1#{} Mana",
+                    "Gain {C:wlt_mana}+#1#{} Mana",
                     "at start of round",
-                    "{V:1}-#2#{} Mana per",
+                    "{C:wlt_mana}-#2#{} Mana per",
                     "round played",
                 },
             },
             j_wlt_mana_spring = {
                 name = "Mana Spring",
                 text = {
-                    "Gain {V:1}+#1#{} Mana per",
+                    "Gain {C:wlt_mana}+#1#{} Mana per",
                     "hand at start of round",
+                },
+            },
+            j_wlt_polymorph = {
+                name = "Polymorph",
+                text = {
+                    "When you play a hand",
+                    "destroy all scoring cards",
+                    "and add that many",
+                    "random {C:attention}enhanced{} cards",
+                    "to your hand",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
+            j_wlt_ponder = {
+                name = "Ponder",
+                text = {
+                    "Always draw {C:attention}#1#{} cards",
+                    "after playing a hand",
+                },
+            },
+            j_wlt_power_of_many = {
+                name = "Power of Many",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
+            j_wlt_power_of_three = {
+                name = "Power of Three",
+                text = {
+                    "Gain {C:wlt_mana}+#1#{} Mana",
+                    "at start of round",
+                    "Increases by {C:wlt_mana}#2#{} Mana",
+                    "if played hand contains a ",
+                    "{C:attention}Three of a Kind #3#s{}",
+                    "rank changes every round"
+                },
+            },
+            j_wlt_ray_of_wood = {
+                name = "Ray of Wood",
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
+            j_wlt_revolution = {
+                name = "Revolution",
+                text = {
+                    "{C:attention}Face{} cards are no longer",
+                    "considered {C:attention}face{} cards",
+                    "and {C:attention}non-face{} cards",
+                    "are now considerd {C:attention}face{} cards{}"
+                },
+            },
+            j_wlt_ritual_1 = {
+                name = "Summoning Ritual Step 1",
+                text = {
+                    "Begin the ritual...",
+                },
+            },
+            j_wlt_ritual_2 = {
+                name = "Summoning Ritual Step 2",
+                text = {
+                    "Progress the ritual...",
+                },
+            },
+            j_wlt_ritual_3 = {
+                name = "Summoning Ritual Step 3",
+                text = {
+                    "Summons a Djinn",
                 },
             },
             j_wlt_scroll_iceforge = {
@@ -101,7 +274,98 @@ return {
                 text = {
                     "This Scroll allows you",
                     "to {C:attention}cast Ice Forge{}",
-                    "once for {V:1}#1#{} mana",
+                    "once for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_scroll_polymorph = {
+                name = "Scroll of Polymorph",
+                text = {
+                    "This Scroll allows you",
+                    "to {C:attention}cast Polymorph{}",
+                    "once for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_scroll_ritual_1 = {
+                name = "Scroll of Summoning Ritual Step 1",
+                text = {
+                    "Win {C:attention}#1#{} rounds where",
+                    "no discards are used",
+                    "to {C:attention}cast Summoning Ritual Step 1{}",
+                    "once for {C:wlt_mana}#2#{} mana",
+                    "{C:inactive}(Currently {C:attention}#3#{C:inactive} of {C:attention}#1#{C:inactive}){}",
+                },
+            },
+            j_wlt_scroll_ritual_2 = {
+                name = "Scroll of Summoning Ritual Step 2",
+                text = {
+                    "Play a hand containing the",
+                    "{C:attention}#1#{} of {V:1}#2#{} and",
+                    "the {C:attention}#3#{} of {V:2}#4#{}",
+                    "{C:attention}#7#{} times to {C:attention}cast Summoning Ritual Step 2{}",
+                    "once for {C:wlt_mana}#5#{} mana",
+                    "{s:0.8}Cards change every round",
+                    "{C:inactive}(Currently {C:attention}#6#{C:inactive} of {C:attention}#7#{C:inactive}){}",
+                },
+            },
+            j_wlt_scroll_ritual_3 = {
+                name = "Scroll of Summoning Ritual Step 3",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "destroy {C:attention}ALL{} Jokers to the right.",
+                    "Destroy a {C:common}Common{}, an {C:uncommon}Uncommon{}, and a {C:rare}Rare{}",
+                    "to {C:attention}cast Summoning Ritual Step 2{}",
+                    "once for {C:wlt_mana}#1#{} mana",
+                    "{C:inactive}(Still need: #2#){}",
+                },
+            },
+            j_wlt_sparking_wand = {
+                name = "Sparking Wand",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "{C:green}#1# in #2#{} chance to",
+                    "cast a random {X:wlt_spell,C:red}Spell{}",
+                },
+            },
+            j_wlt_succession_crisis = {
+                name = "Succession Crisis",
+                text = {
+                    "Played {C:attention}Face{} cards give {X:mult,C:white}X#1#{} Mult",
+                    "Played {C:attention}Face{} cards of the",
+                    "same rank debuff each other",
+                },
+            },
+            j_wlt_time_stretch = {
+                name = "Time Stretch",
+                text = {
+                    "Gain {C:blue}+#1#{} Hand",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
+            j_wlt_tower_shield = {
+                name = "Tower Shield",
+                text = {
+                    "When multiple {C:attention}Stone{} cards",
+                    "are played merge all the",
+                    "chips into the first one",
+                    "and destroy the rest"
+                },
+            },
+            j_wlt_wand_chain_lightning = {
+                name = "Wand of Chain Lightning",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Chain Lightning{} for {C:wlt_mana}#1#{} mana",
+                    "{s:0.85}Additional casts in a round{}",
+                    "{s:0.85}double the {C:wlt_mana}mana{} cost{}",
+                },
+            },
+            j_wlt_wand_draining = {
+                name = "Wand of Draining",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Drain{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
                 },
             },
             j_wlt_wand_fireball = {
@@ -109,14 +373,31 @@ return {
                 text = {
                     "This Wand allows you to",
                     "{C:attention}cast Fireball{} once per",
-                    "round for {V:1}#1#{} mana",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_lightning_bolt = {
+                name = "Wand of Lightning Bolt",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Lightning Bolt{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_time_stretch = {
+                name = "Wand of Time Stretch",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Time Stretch{} for {C:wlt_mana}#1#{} mana",
+                    "{s:0.85}Additional casts in a round{}",
+                    "{s:0.85}double the {C:wlt_mana}mana{} cost{}",
                 },
             },
             j_wlt_wizard_staff = {
                 name = "Wizard Staff",
                 text = {
                     "This Joker stores the last",
-                    "spell you've cast and allows",
+                    "{X:wlt_spell,C:red}Spell{} you've cast and allows",
                     "you to cast it once",
                     "{C:inactive}(Currently {C:attention}#1#{C:inactive}){}",
                 },
@@ -134,7 +415,7 @@ return {
             o_wlt_cast_keyword={
                 name="Cast",
                 text={
-                    "Spend {V:1}#1#{} mana",
+                    "Spend {C:wlt_mana}#1#{} mana",
                     "to create a joker"
                 },
             },
@@ -147,7 +428,13 @@ return {
             k_wlt_summon="Summon",
             wlt_cast="CAST",
             wlt_cast_ex="Cast!",
+            wlt_draws_nearer="It Draws Nearer",
+            wlt_chant_ex="Chant!",
+            wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
+            wlt_poof_ex="Poof!",
+            wlt_summon_ex="Summon!",
+            wlt_wish="WISH",
         },
         labels = {
             k_wlt_spell="Spell",
@@ -156,6 +443,7 @@ return {
         v_dictionary = {
             wlt_hand_minus="-#1# Hand",
             wlt_mana_minus="-#1# Mana",
+            wlt_mana_plus="+#1# Mana",
             wlt_mana_cost="#1# Mana",
             wlt_mana_text="#1#/#2# Mana",
             wlt_soul_warning="Warning! This hand will cost some of your Soul",

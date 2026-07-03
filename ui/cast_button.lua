@@ -1,10 +1,6 @@
 G.FUNCS.on_cast = function(e, mute, nosave)
     e.config.button = nil
     local card = e.config.ref_table
-    local area = card.area
-    local prev_state = G.STATE
-    local dont_dissolve = nil
-    local delay_fac = 1
     
     card:click()
     card.ability.extra.charged = false
@@ -14,7 +10,7 @@ G.FUNCS.on_cast = function(e, mute, nosave)
     spend_mana(card.ability.extra.mana_cost)
     SMODS.add_card({key = card.ability.extra.spell, no_edition = "true", stickers = nil})
 
-    SMODS.calculate_context({cast_spell = true, card = card})
+    spell_cast(card)
 
     return true
 end
@@ -44,9 +40,9 @@ end
 
 
 function create_cast_button(card)
-    local use = nil
+    local cast = nil
     if (type(card.ability.extra) == "table") and card.ability.extra.has_cast then
-        use = 
+        cast =
         {n=G.UIT.C, config={align = "cr"}, nodes={
           
           {n=G.UIT.C, config={ref_table = card, align = "cr",maxw = 1.25, padding = 0.1, r=0.08, minw = 1.25, minh = (card.area and card.area.config.type == 'joker') and 0 or 1, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = true, button = 'on_cast', func = 'can_cast'}, nodes={
@@ -62,5 +58,5 @@ function create_cast_button(card)
           }}
         }}
     end
-    return use
+    return cast
 end

@@ -7,13 +7,14 @@ end
 apply_mana_decks = function(self, back)
     set_max_mana(self.config.max_mana)
     set_current_mana(self.config.max_mana)
+    set_current_soul(self.config.max_soul)
 end
 
 SMODS.Back({
     key = "mana",
     pos = { x = 0, y = 0 },
     atlas = "decks",
-    config = { max_mana = 5 },
+    config = { max_mana = 5, max_soul = 5 },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
             func = function()
@@ -36,21 +37,26 @@ SMODS.Back({
     atlas = "decks",
     config = { 
         max_mana = 5,
-        consumables = { "c_jupiter" },
+        max_soul = 5,
+        consumables = { "c_tower", "c_tower", "c_tower", "c_tower" },
     },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
             func = function()
-                SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_mana_potion", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_wand_fireball", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_astromancer", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_oops", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_sparking_wand", no_edition="true", stickers=nil})
                 return true
             end
         }))
         apply_mana_decks(self, back)
     end,
+    initial_deck = {
+        ranks = { 'Ace', '2', '3', '4', '5' },
+        suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds' }
+    },
     calculate = calc_mana_decks,
 })

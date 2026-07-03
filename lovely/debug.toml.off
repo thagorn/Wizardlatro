@@ -1,3 +1,7 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
 [[patches]]
 [patches.pattern]
 target = "functions/misc_functions.lua"

@@ -1,0 +1,16 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# Crash fix
+# prevent pool checking nil G.playing_cards when looking at collection outside of game
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "for kk, vv in pairs(G.playing_cards) do"
+position = "at"
+payload = '''
+for kk, vv in pairs(G.playing_cards or {}) do
+'''
+match_indent = true
+times = 1

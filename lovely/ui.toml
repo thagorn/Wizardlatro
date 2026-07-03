@@ -2,16 +2,33 @@
 version = "1.0.0"
 priority = 0
 
-# Cast Button
+# Cast and other Buttons
 [[patches]]
 [patches.pattern]
 target = "functions/UI_definitions.lua"
 pattern = "local use = nil"
 position = "after"
 payload = '''
-use = create_cast_button(card)
+local cast = create_cast_button(card)
+local other = create_other_button(card)
 '''
 match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "            sell"
+position = "after"
+payload = '''
+          }},
+          {n=G.UIT.R, config={align = 'cl'}, nodes={
+            cast
+          }},
+          {n=G.UIT.R, config={align = 'cl'}, nodes={
+            other
+'''
+match_indent = false
 times = 1
 
 

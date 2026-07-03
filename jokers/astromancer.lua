@@ -1,7 +1,7 @@
 -- Astromancer
 SMODS.Joker {
     atlas = "jokers",
-    pos = { x = 8, y = 0 }, -- TODO
+    pos = { x = 7, y = 0 },
     key = "astromancer",
     blueprint_compat = true,
     eternal_compat = true,
