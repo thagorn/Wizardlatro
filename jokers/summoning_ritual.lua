@@ -31,8 +31,7 @@ SMODS.Joker {
     eternal_compat = false,
     unlocked = true,
     discovered = true,
-    --rarity = 1, TODO
-    rarity = 'wlt_test',
+    rarity = 1,
     cost = 2,
     config = { extra = { 
         has_cast = true,
@@ -49,21 +48,12 @@ SMODS.Joker {
     end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost } }
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_ritual_1
-        local card_1 = G.GAME.current_round.wlt_ritual_card_1 or { rank = 'Ace', suit = 'Spades' }
-        local card_2 = G.GAME.current_round.wlt_ritual_card_2 or { rank = '2', suit = 'Clubs' }
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.spell]
         return { vars = { 
-            localize(card_1.rank, 'ranks'),
-            localize(card_1.suit, 'suits_plural'),
-            localize(card_2.rank, 'ranks'),
-            localize(card_2.suit, 'suits_plural'),
+            card.ability.extra.goal,
             card.ability.extra.mana_cost,
             card.ability.extra.progress,
-            card.ability.extra.goal,
-            colours = {
-                G.C.SUITS[card_1.suit],
-                G.C.SUITS[card_2.suit],
-            }}}
+            }}
     end,
     set_ability = function(self, card, initial, delay_sprites)
         card.ability.extra.mana_cost_label = localize({
@@ -73,34 +63,15 @@ SMODS.Joker {
                                             })
     end,
     calculate = function(self, card, context)
-		if context.before and card.ability.extra.progress < card.ability.extra.goal then
-		    local c1 = false
-            local c2 = false
-			for _, playing_card in ipairs(context.scoring_hand) do
-                if playing_card:get_id() == G.GAME.current_round.wlt_ritual_card_1.id and -- \\
-                    playing_card:is_suit(G.GAME.current_round.wlt_ritual_card_1.suit) then
-                    c1 = true
-                end
-                if playing_card:get_id() == G.GAME.current_round.wlt_ritual_card_2.id and -- \\
-                    playing_card:is_suit(G.GAME.current_round.wlt_ritual_card_2.suit) then
-                    c2 = true
-                end
+        if context.end_of_round and context.main_eval and not context.game_over and G.GAME.current_round.discards_used == 0 then
+            card.ability.extra.progress = card.ability.extra.progress + 1
+            if card.ability.extra.progress >= card.ability.extra.goal then
+                card.ability.extra.charged = true
             end
-            if c1 and c2 then
-                card.ability.extra.progress = card.ability.extra.progress + 1
-                if card.ability.extra.progress >= card.ability.extra.goal then
-                    card.ability.extra.charged = true
-                    return {
-                        message = localize('wlt_chant_ex'),
-                        colour = G.C.RED
-                    }
-                end
-
-                return {
-                    message = localize('wlt_chant_ex'),
-                    colour = G.C.RED
-                }
-            end
+            return {
+                message = localize('wlt_chant_ex'),
+                colour = G.C.RED
+            }
 		end
     end
 }
@@ -146,12 +117,11 @@ SMODS.Joker {
     eternal_compat = false,
     unlocked = true,
     discovered = true,
-    --rarity = 1, TODO
-    rarity = 'wlt_test',
+    rarity = 1,
     cost = 2,
     config = { extra = { 
         has_cast = true,
-        charged = true, -- TODO
+        charged = false,
         progress = 0,
         goal = 3,
         reusable = false,
@@ -164,7 +134,7 @@ SMODS.Joker {
     end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost } }
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_ritual_2
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.spell]
         local card_1 = G.GAME.current_round.wlt_ritual_card_1 or { rank = 'Ace', suit = 'Spades' }
         local card_2 = G.GAME.current_round.wlt_ritual_card_2 or { rank = '2', suit = 'Clubs' }
         return { vars = { 
@@ -261,12 +231,11 @@ SMODS.Joker {
     eternal_compat = false,
     unlocked = true,
     discovered = true,
-    --rarity = 1, TODO
-    rarity = 'wlt_test',
+    rarity = 1,
     cost = 2,
     config = { extra = { 
         has_cast = true,
-        charged = true, -- TODO
+        charged = false,
         common = false,
         uncommon = false,
         rare = false,
@@ -280,7 +249,7 @@ SMODS.Joker {
     end,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'o_wlt_cast_keyword', set = 'Other', vars = {card.ability.extra.mana_cost } }
-        info_queue[#info_queue + 1] = G.P_CENTERS.j_wlt_ritual_3
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.spell]
         local progress = {}
         if not card.ability.extra.common then table.insert(progress, localize('k_common')) end
         if not card.ability.extra.uncommon then table.insert(progress, localize('k_uncommon')) end

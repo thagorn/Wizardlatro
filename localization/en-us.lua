@@ -264,10 +264,20 @@ return {
             j_wlt_scroll_ritual_1 = {
                 name = "Scroll of Summoning Ritual Step 1",
                 text = {
+                    "Win {C:attention}#1#{} rounds where",
+                    "no discards are used",
+                    "to {C:attention}cast Summoning Ritual Step 1{}",
+                    "once for {C:wlt_mana}#2#{} mana",
+                    "{C:inactive}(Currently {C:attention}#3#{C:inactive} of {C:attention}#1#{C:inactive}){}",
+                },
+            },
+            j_wlt_scroll_ritual_2 = {
+                name = "Scroll of Summoning Ritual Step 2",
+                text = {
                     "Play a hand containing the",
                     "{C:attention}#1#{} of {V:1}#2#{} and",
                     "the {C:attention}#3#{} of {V:2}#4#{}",
-                    "{C:attention}#7#{} times to {C:attention}cast Summoning Ritual Step 1{}",
+                    "{C:attention}#7#{} times to {C:attention}cast Summoning Ritual Step 2{}",
                     "once for {C:wlt_mana}#5#{} mana",
                     "{s:0.8}Cards change every round",
                     "{C:inactive}(Currently {C:attention}#6#{C:inactive} of {C:attention}#7#{C:inactive}){}",
