@@ -332,6 +332,15 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_tower_shield = {
+                name = "Tower Shield",
+                text = {
+                    "When multiple {C:attention}Stone{} cards",
+                    "are played merge all the",
+                    "chips into the first one",
+                    "and destroy the rest"
+                },
+            },
             j_wlt_wand_chain_lightning = {
                 name = "Wand of Chain Lightning",
                 text = {
