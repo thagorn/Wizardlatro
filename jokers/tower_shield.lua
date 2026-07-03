@@ -21,9 +21,7 @@ SMODS.Joker {
                 if SMODS.has_enhancement(playing_card, 'm_stone') then
                     if not firstStone then
                         firstStone = playing_card
-                        goto continue
-                    end
-                    if firstStone then
+                    else
                         firstStone.ability.perma_bonus = (firstStone.ability.perma_bonus or 0) +
                                                         (playing_card.ability.perma_bonus or 0) +
                                                         (playing_card.ability.bonus or 0)
@@ -34,7 +32,6 @@ SMODS.Joker {
                         }, firstStone)
                     end
                 end
-                ::continue::
             end
         end
     end
