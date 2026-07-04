@@ -8,7 +8,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
     rarity = 1,
-    cost = 4,
+    cost = 2,
     config = { extra = { mana = 1 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.mana } }
