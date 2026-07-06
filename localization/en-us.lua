@@ -421,14 +421,24 @@ return {
             },
         },
         Other =  {
-            o_wlt_cast_keyword={
-                name="Cast",
-                text={
+            o_wlt_cast_keyword = {
+                name = "Cast",
+                text = {
                     "Spend {C:wlt_mana}#1#{} mana",
                     "to create a joker"
                 },
             },
 
+        },
+        Tarot = {
+            c_wlt_foresight = {
+                name = "Foresight",
+                text = {
+                    "Enhances {C:attention}#1#{} selected",
+                    "card into a ",
+                    "{C:attention}#2#{}"
+                },
+            },
         },
     },
     misc = {

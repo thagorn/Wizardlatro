@@ -42,6 +42,14 @@ for _, file in ipairs(joker_src) do
     end
 end
 
+-- Tarots
+local joker_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "tarots")
+for _, file in ipairs(joker_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("tarots/" .. file))()
+    end
+end
+
 -- Decks
 local deck_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "decks")
 for _, file in ipairs(deck_src) do

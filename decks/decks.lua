@@ -38,7 +38,7 @@ SMODS.Back({
     config = { 
         max_mana = 5,
         max_soul = 5,
-        consumables = { "c_wlt_crystower", "c_wlt_crystower", "c_wlt_crystower", "c_wlt_crystower" },
+        consumables = { "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight" },
     },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
