@@ -4,7 +4,9 @@ return {
             b_wlt_mana = {
                 name = "Mana Deck",
                 text = {
-                    "Starts with 5 mana droplets",
+                    "Start with {C:wlt_mana}5 mana{}",
+                    "{C:wlt_soul}5 soul{} and",
+                    "5 copies of {C:common}Mana Droplet{}",
                 },
             },
             b_wlt_test = {
@@ -79,6 +81,16 @@ return {
                     "This Wand allows you to",
                     "{C:attention}cast Ray of Wood{}",
                     "once per hand for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_crystal_growth = {
+                name = "Crystal Growth",
+                text = {
+                    "{C:attention}+#1#{} hand size",
+                    "The first #2# cards",
+                    "drawn each round that",
+                    "are not {C:attention}Crystal{} cards",
+                    "transform into {C:attention}Crystal{} cards",
                 },
             },
             j_wlt_crystal_wizard = {
