@@ -12,8 +12,8 @@ end
 
 SMODS.Back({
     key = "mana",
-    pos = { x = 0, y = 0 },
-    atlas = "decks",
+    pos = { x = 1, y = 0 },
+    atlas = "cards",
     config = { max_mana = 5, max_soul = 5 },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
@@ -33,12 +33,12 @@ SMODS.Back({
 
 SMODS.Back({
     key = "test",
-    pos = { x = 0, y = 1 },
-    atlas = "decks",
+    pos = { x = 2, y = 0 },
+    atlas = "cards",
     config = { 
         max_mana = 5,
         max_soul = 5,
-        consumables = { "c_tower", "c_tower", "c_tower", "c_tower" },
+        consumables = { "c_wlt_crystower", "c_wlt_crystower", "c_wlt_crystower", "c_wlt_crystower" },
     },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({

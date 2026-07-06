@@ -14,6 +14,15 @@ return {
                 },
             },
         },
+        Enhanced = {
+            m_wlt_crystal = {
+                name = "Crystal Card",
+                text = {
+                    "{C:wlt_mana}+#1# Mana{} when discarded",
+                    "no rank or suit",
+                },
+            },
+        },
         Joker = {
             j_wlt_alchemy = {
                 name = "Alchemy",
