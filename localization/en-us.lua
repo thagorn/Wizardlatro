@@ -81,6 +81,16 @@ return {
                     "once per hand for {C:wlt_mana}#1#{} mana",
                 },
             },
+            j_wlt_crystal_wizard = {
+                name = "Crystal Wizard",
+                text = {
+                    "Gain {C:wlt_mana}+#1#{} Mana",
+                    "at start of round for each",
+                    "{C:attention}Crystal Card{} in",
+                    "your {C:attention}full deck{}",
+                    "{C:inactive}(Currently {C:wlt_mana}+#2#{C:inactive} Mana)",
+                },
+            },
             j_wlt_djinn = {
                 name = "Djinn",
                 text = {

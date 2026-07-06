@@ -1,4 +1,3 @@
-
 -- Golemancer
 SMODS.Joker {
     atlas = "jokers",
