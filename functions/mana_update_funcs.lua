@@ -1,3 +1,7 @@
+function change_max_mana(change)
+    set_max_mana(WLT.MAGIC.max_mana + change)
+end
+
 function set_max_mana(new_mana)
     WLT.MAGIC.max_mana = new_mana
 end

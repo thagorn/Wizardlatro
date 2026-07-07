@@ -83,6 +83,16 @@ return {
                     "once per hand for {C:wlt_mana}#1#{} mana",
                 },
             },
+            j_wlt_crystal_gorger = {
+                name = "Crystal Gorger",
+                text = {
+                    "If every card in your played",
+                    "hand is a {C:attention}Crystal{} card",
+                    "then destroy each one and",
+                    "increase your {C:wlt_mana}Mana Pool{} by",
+                    "#1# for each card destroyed",
+                },
+            },
             j_wlt_crystal_growth = {
                 name = "Crystal Growth",
                 text = {
@@ -450,6 +460,13 @@ return {
                     "to create a joker"
                 },
             },
+            o_wlt_mana_pool_keyword = {
+                name = "Mana Pool",
+                text = {
+                    "The amount of mana you",
+                    "start every round with"
+                },
+            },
 
         },
         Tarot = {
@@ -473,6 +490,7 @@ return {
             wlt_chant_ex="Chant!",
             wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
+            wlt_munch_ex="Munch!",
             wlt_poof_ex="Poof!",
             wlt_summon_ex="Summon!",
             wlt_wish="WISH",
