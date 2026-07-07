@@ -7,7 +7,7 @@ SMODS.Joker {
     eternal_compat = true,
     unlocked = true,
     discovered = true,
-    rarity = 1,
+    rarity = 2,
     cost = 6,
     config = { extra = { mana = 1 } },
     loc_vars = function(self, info_queue, card)
