@@ -13,8 +13,15 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
-    key = "decks",
-    path = "jokers.png", -- TODO
+    key = "cards",
+    path = "cards.png",
+    px = 71,
+    py = 95
+})
+
+SMODS.Atlas({
+    key = "consumeables",
+    path = "consumeables.png",
     px = 71,
     py = 95
 })

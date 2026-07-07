@@ -12,8 +12,8 @@ end
 
 SMODS.Back({
     key = "mana",
-    pos = { x = 0, y = 0 },
-    atlas = "decks",
+    pos = { x = 1, y = 0 },
+    atlas = "cards",
     config = { max_mana = 5, max_soul = 5 },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
@@ -33,12 +33,12 @@ SMODS.Back({
 
 SMODS.Back({
     key = "test",
-    pos = { x = 0, y = 1 },
-    atlas = "decks",
+    pos = { x = 2, y = 0 },
+    atlas = "cards",
     config = { 
         max_mana = 5,
         max_soul = 5,
-        consumables = { "c_tower", "c_tower", "c_tower", "c_tower" },
+        consumables = { "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight" },
     },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
@@ -47,8 +47,7 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_oops", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_sparking_wand", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_power_word_death", no_edition="true", stickers=nil})
                 return true
             end
         }))

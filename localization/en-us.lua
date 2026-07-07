@@ -4,13 +4,24 @@ return {
             b_wlt_mana = {
                 name = "Mana Deck",
                 text = {
-                    "Starts with 5 mana droplets",
+                    "Start with {C:wlt_mana}5 mana{}",
+                    "{C:wlt_soul}5 soul{} and",
+                    "5 copies of {C:common}Mana Droplet{}",
                 },
             },
             b_wlt_test = {
                 name = "Test Deck",
                 text = {
                     "Starts with ??? whatever I'm testing",
+                },
+            },
+        },
+        Enhanced = {
+            m_wlt_crystal = {
+                name = "Crystal Card",
+                text = {
+                    "{C:wlt_mana}+#1# Mana{} when discarded",
+                    "no rank or suit",
                 },
             },
         },
@@ -70,6 +81,36 @@ return {
                     "This Wand allows you to",
                     "{C:attention}cast Ray of Wood{}",
                     "once per hand for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_crystal_gorger = {
+                name = "Crystal Gorger",
+                text = {
+                    "If every card in your played",
+                    "hand is a {C:attention}Crystal{} card",
+                    "then destroy each one and",
+                    "increase your {C:wlt_mana}Mana Pool{} by",
+                    "#1# for each card destroyed",
+                },
+            },
+            j_wlt_crystal_growth = {
+                name = "Crystal Growth",
+                text = {
+                    "{C:attention}+#1#{} hand size",
+                    "The first #2# cards",
+                    "drawn each round that",
+                    "are not {C:attention}Crystal{} cards",
+                    "transform into {C:attention}Crystal{} cards",
+                },
+            },
+            j_wlt_crystal_wizard = {
+                name = "Crystal Wizard",
+                text = {
+                    "Gain {C:wlt_mana}+#1#{} Mana",
+                    "at start of round for each",
+                    "{C:attention}Crystal Card{} in",
+                    "your {C:attention}full deck{}",
+                    "{C:inactive}(Currently {C:wlt_mana}+#2#{C:inactive} Mana)",
                 },
             },
             j_wlt_djinn = {
@@ -232,6 +273,16 @@ return {
                     "if played hand contains a ",
                     "{C:attention}Three of a Kind #3#s{}",
                     "rank changes every round"
+                },
+            },
+            j_wlt_power_word_death = {
+                name = "Power Word: Death",
+                text = {
+                    "At the end of the round",
+                    "if your final hand",
+                    "contained only 1 card",
+                    "create a {C:tarot}Death{} card",
+                    "{C:inactive}(Must have room){}"
                 },
             },
             j_wlt_ray_of_wood = {
@@ -412,14 +463,31 @@ return {
             },
         },
         Other =  {
-            o_wlt_cast_keyword={
-                name="Cast",
-                text={
+            o_wlt_cast_keyword = {
+                name = "Cast",
+                text = {
                     "Spend {C:wlt_mana}#1#{} mana",
                     "to create a joker"
                 },
             },
+            o_wlt_mana_pool_keyword = {
+                name = "Mana Pool",
+                text = {
+                    "The amount of mana you",
+                    "start every round with"
+                },
+            },
 
+        },
+        Tarot = {
+            c_wlt_foresight = {
+                name = "Foresight",
+                text = {
+                    "Enhances {C:attention}#1#{} selected",
+                    "card into a ",
+                    "{C:attention}#2#{}"
+                },
+            },
         },
     },
     misc = {
@@ -432,6 +500,7 @@ return {
             wlt_chant_ex="Chant!",
             wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
+            wlt_munch_ex="Munch!",
             wlt_poof_ex="Poof!",
             wlt_summon_ex="Summon!",
             wlt_wish="WISH",
