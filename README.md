@@ -9,6 +9,7 @@ Wizardlatro is a mod that adds a new resource 'Mana' to manage while playing. In
 1. Install [Steamodded](https://github.com/Steamodded/smods/wiki)
 2. Download the latest stable version of Wizardlatro from the [releases page](https://github.com/thagorn/Wizardlatro/releases)
 3. Unzip into the Mods folder created during the Steamodded install
+4. Launch Balatro and select one of the new decks added by Wizardlatro
 
 ## Features
 
