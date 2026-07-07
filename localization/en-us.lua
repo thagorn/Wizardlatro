@@ -275,6 +275,16 @@ return {
                     "rank changes every round"
                 },
             },
+            j_wlt_power_word_death = {
+                name = "Power Word: Death",
+                text = {
+                    "At the end of the round",
+                    "if your final hand",
+                    "contained only 1 card",
+                    "create a {C:tarot}Death{} card",
+                    "{C:inactive}(Must have room){}"
+                },
+            },
             j_wlt_ray_of_wood = {
                 name = "Ray of Wood",
                 text = {
