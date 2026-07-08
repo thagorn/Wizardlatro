@@ -38,7 +38,7 @@ SMODS.Back({
     config = { 
         max_mana = 5,
         max_soul = 5,
-        consumables = { "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight" },
+        consumables = { "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight", "c_wlt_burned_card" },
     },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
@@ -46,7 +46,8 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_potion", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
+                test = SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
+                test:set_edition('e_wlt_burned', true)
                 SMODS.add_card({key="j_wlt_power_word_death", no_edition="true", stickers=nil})
                 return true
             end

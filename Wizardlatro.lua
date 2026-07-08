@@ -34,6 +34,14 @@ for _, file in ipairs(joker_src) do
     end
 end
 
+-- Editions
+local joker_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "editions")
+for _, file in ipairs(joker_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("editions/" .. file))()
+    end
+end
+
 -- Enhancements
 local joker_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "enhancements")
 for _, file in ipairs(joker_src) do
