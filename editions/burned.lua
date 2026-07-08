@@ -2,6 +2,8 @@
 SMODS.Edition({
     key = "burned",
     shader = "wlt_burned",
+    disable_base_shader = true,
+    disable_shadow = true,
     loc_txt = {
         name = "Overexposed",
         label = "Overexposed",

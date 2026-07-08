@@ -28,6 +28,24 @@ vec3 reinhardToneMap(vec3 color, float exposure)
     return color;
 }
 
+vec4 burnCorner(vec4 tex, vec2 position)
+{
+    float l = length(position);
+    if (l < 0.3)
+    {
+        return vec4(tex.rgb, 0.0);
+    }
+    if (l < 0.35)
+    {
+        return vec4(0.0, 0.0, 0.0, tex.a);
+    }
+    if (l < 0.4)
+    {
+        return vec4(0.396, 0.349, 0.349, tex.a);
+    }
+    return tex;
+}
+
 // This is what actually changes the look of card
 vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords )
 {
@@ -39,23 +57,26 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     vec4 basetex = Texel(texture, texture_coords);
     float t = burned.g + time;
 
+    // burn off corner
+    tex = burnCorner(tex, uv);
+
 
     if (tex.a == 0){
         tex.a = 0;
     } else {
-    vec3 color = tex.rgb;
-    float rate = 1.5 - uv.y - 0.3*sin(0.8*t);
-    if(rate > 1){
-        rate = 1 - mod(rate, 1);
-    }
-    color *= (2.3 * rate);
-    vec3 newColor = reinhardToneMap(color, 1.5);
-    // newColor += 0.5*sin(burned.r*0.12512);
-    tex = vec4(newColor, 1.);
+        vec3 color = tex.rgb;
+        float rate = 1.5 - uv.y - 0.3*sin(0.8*t);
+        if(rate > 1){
+            rate = 1 - mod(rate, 1);
+        }
+        color *= (2.3 * rate);
+        vec3 newColor = reinhardToneMap(color, 1.5);
+        // newColor += 0.5*sin(burned.r*0.12512);
+        tex = vec4(newColor, 1.);
     
-    float ratio = 0.9;
-    tex = ratio*tex + (1-ratio)*basetex;
-}
+        float ratio = 0.9;
+        tex = ratio*tex + (1-ratio)*basetex;
+    }
     // required
 	return dissolve_mask(tex*colour, texture_coords, uv);
 }
