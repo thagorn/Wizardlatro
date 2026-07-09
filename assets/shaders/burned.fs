@@ -30,16 +30,29 @@ vec3 reinhardToneMap(vec3 color, float exposure)
 
 vec4 burnCorner(vec4 tex, vec2 position)
 {
-    float l = length(position);
-    if (l < 0.3)
+    float d = distance(position, vec2(-0.3, -0.5));
+    if (d < 0.15)
     {
         return vec4(tex.rgb, 0.0);
     }
-    if (l < 0.35)
+    if (d < 0.2)
     {
         return vec4(0.0, 0.0, 0.0, tex.a);
     }
-    if (l < 0.4)
+    if (d < 0.25)
+    {
+        return vec4(0.396, 0.349, 0.349, tex.a);
+    }
+    d = distance(position, vec2(0.25, 0.25));
+    if (d < 0.1)
+    {
+        return vec4(tex.rgb, 0.0);
+    }
+    if (d < 0.13)
+    {
+        return vec4(0.0, 0.0, 0.0, tex.a);
+    }
+    if (d < 0.16)
     {
         return vec4(0.396, 0.349, 0.349, tex.a);
     }
@@ -51,14 +64,17 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
 {
     // Take pixel color (rgba) from `texture` at `texture_coords`, equivalent of texture2D in GLSL
     vec4 tex = Texel(texture, texture_coords);
-    // Position of a pixel within the sprite
+    // Position of a pixel within the sprite (0, 0 is top left)
 	vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
+    // Position scaled by card dimensions (0, 0 is center)
+    vec2 adjusted_uv = uv - vec2(0.5, 0.5);
+    adjusted_uv.x = adjusted_uv.x*texture_details.b/texture_details.a;
 
     vec4 basetex = Texel(texture, texture_coords);
     float t = burned.g + time;
 
     // burn off corner
-    tex = burnCorner(tex, uv);
+    tex = burnCorner(tex, adjusted_uv);
 
 
     if (tex.a == 0){
