@@ -99,9 +99,8 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
 {
     vec4 tex = Texel( texture, texture_coords);
     vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
-    vec2 adjusted_uv = uv - vec2(0.5, 0.5);
-    adjusted_uv.x = adjusted_uv.x*texture_details.b/texture_details.a;
 
+    // rotating vertical bands
     float fac1 = 1-(max(0.1, min(distance(uv.y, (aethereal2.r)), 0.4)));
     float fac2 = 1-(max(0.1, min(distance(uv.y, (aethereal2.r - 1)), 0.4)));
     float maxfac = max(fac1, fac2);
@@ -110,29 +109,29 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     float high = max(tex.r, max(tex.g, tex.b));
 	float delta = min(high, max(0.5, 1. - low));
 
+    // lower alpha and raise white to compensate
     tex.r = tex.r-delta + delta*maxfac*0.3;
     tex.g = tex.g-delta + delta*maxfac*0.3;
     tex.b = tex.b + delta*maxfac*1.9;
     tex.a = (1-maxfac) * tex.a;
 
-    //float ed = 0.2 - min(min(min(distance(uv.x, 0), distance(uv.x, 1)), distance(uv.y, 0)), distance(uv.y, 1));
-    //float ed = 0.2 - min(min(min(distance(uv, vec2(0, 0)), distance(uv, vec2(1, 1))), distance(uv, vec2(0, 1))), distance(uv, vec2(1, 0)));
-    float ed = .3 - distance(uv, vec2(0.5, 0.5));
-    if (ed > 0)
+    float center_distance = .3 - distance(uv, vec2(0.5, 0.5));
+    if (center_distance > 0)
     {
         // purple core
-        tex.r = (1 - tex.r) * ed * 0.5 + tex.r;
-        tex.g = tex.g - ((tex.g - 0) * ed);
-        tex.b = (1 - tex.b) * ed * 0.5 + tex.b;
+        tex.r = (1 - tex.r) * center_distance * 0.5 + tex.r;
+        tex.g = tex.g - ((tex.g - 0) * center_distance);
+        tex.b = (1 - tex.b) * center_distance * 0.5 + tex.b;
     }
-    ed *= -1;
-    ed + 0.1;
-    if (ed > 0)
+    float edge_distance = 0.2 - min(min(min(distance(uv.x, 0), distance(uv.x, 1)), distance(uv.y, 0)), distance(uv.y, 1));
+    float adj_ed = (edge_distance + (center_distance * -1))/2;
+    if (adj_ed > 0)
     {
         // yellow glow
-        tex.r = (1 - tex.r) * ed + tex.r;
-        tex.g = (1 - tex.g) * ed + tex.g;
-        tex.b = tex.b - ((tex.b - 0) * ed * 2.5);
+        adj_ed *= 1.5;
+        tex.r = (1 - tex.r) * adj_ed + tex.r;
+        tex.g = (1 - tex.g) * adj_ed + tex.g;
+        tex.b = tex.b - ((tex.b - 0) * adj_ed * 2.5);
     }
 
     return dissolve_mask(tex, texture_coords, uv);
