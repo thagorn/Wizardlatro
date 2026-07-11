@@ -21,13 +21,6 @@ extern PRECISION vec4 burn_colour_2;
 // Apply dissolve effect (when card is being "burnt", e.g. when consumable is used)
 vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv);
 
-vec3 reinhardToneMap(vec3 color, float exposure)
-{
-    color *= exposure/(1. + color / exposure);
-    color = pow(color, vec3(1. / 2.2));
-    return color;
-}
-
 vec4 burnCorner(vec4 tex, vec2 position)
 {
     float d = distance(position, vec2(-0.3, -0.5));
@@ -59,6 +52,55 @@ vec4 burnCorner(vec4 tex, vec2 position)
     return tex;
 }
 
+float random(float seed)
+{
+    return fract(sin(seed) * 437580.5453123);
+}
+
+float noise(float seed)
+{
+    float i = floor(seed);
+    float f = fract(seed);
+    return mix(random(i), random(i + 1.), smoothstep(0., 1., f));
+}
+
+vec4 burnEdge(vec4 tex, vec2 position)
+{
+    float fuzz = burned.x * .0001;
+    float seed = position.x * 10.;
+    float noised = noise(seed) * .2;
+    //float noised = sin(seed)+0.5;
+    float edge_distance = distance(position.y, 0.) + fuzz;
+    if (edge_distance < noised)
+    {
+        tex.a = 0.;
+    }
+    return tex;
+}
+
+vec4 burnEdge2(vec4 tex, vec2 position)
+{
+    float fuzz = burned.x * .0001;
+    float seed = floor(position.y);
+    float noised = (noise1(seed) + 1.) * .1 + fuzz;
+    float edge_distance = min(min(min(distance(position.x, 0.), distance(position.x, 1.)), distance(position.y, 0.)), distance(position.y, 1.));
+    if (edge_distance < noised)
+    {
+        tex.a = 0.;
+    }
+    return tex;
+}
+
+vec4 burnDissolve(vec4 tex)
+{
+    if (burn_colour_2.a > 0.01){
+        tex.rgb = tex.rgb*(1.-0.6*burned.x) + 0.6*burn_colour_2.rgb*burned.x;
+    } else if (burn_colour_1.a > 0.01){
+        tex.rgb = tex.rgb*(1.-0.6*burned.x) + 0.6*burn_colour_1.rgb*burned.x;
+    }
+    return tex;
+}
+
 // This is what actually changes the look of card
 vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords )
 {
@@ -74,25 +116,9 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     float t = burned.g + time;
 
     // burn off corner
-    tex = burnCorner(tex, adjusted_uv);
+    tex = burnEdge(tex, uv);
+    //tex = burnDissolve(tex);
 
-
-    if (tex.a == 0){
-        tex.a = 0;
-    } else {
-        vec3 color = tex.rgb;
-        float rate = 1.5 - uv.y - 0.3*sin(0.8*t);
-        if(rate > 1){
-            rate = 1 - mod(rate, 1);
-        }
-        color *= (2.3 * rate);
-        vec3 newColor = reinhardToneMap(color, 1.5);
-        // newColor += 0.5*sin(burned.r*0.12512);
-        tex = vec4(newColor, 1.);
-    
-        float ratio = 0.9;
-        tex = ratio*tex + (1-ratio)*basetex;
-    }
     // required
 	return dissolve_mask(tex*colour, texture_coords, uv);
 }
