@@ -21,40 +21,9 @@ extern PRECISION vec4 burn_colour_2;
 // Apply dissolve effect (when card is being "burnt", e.g. when consumable is used)
 vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv);
 
-vec4 burnCorner(vec4 tex, vec2 position)
-{
-    float d = distance(position, vec2(-0.3, -0.5));
-    if (d < 0.15)
-    {
-        return vec4(tex.rgb, 0.0);
-    }
-    if (d < 0.2)
-    {
-        return vec4(0.0, 0.0, 0.0, tex.a);
-    }
-    if (d < 0.25)
-    {
-        return vec4(0.396, 0.349, 0.349, tex.a);
-    }
-    d = distance(position, vec2(0.25, 0.25));
-    if (d < 0.1)
-    {
-        return vec4(tex.rgb, 0.0);
-    }
-    if (d < 0.13)
-    {
-        return vec4(0.0, 0.0, 0.0, tex.a);
-    }
-    if (d < 0.16)
-    {
-        return vec4(0.396, 0.349, 0.349, tex.a);
-    }
-    return tex;
-}
-
 float random(float seed)
 {
-    return fract(sin(seed) * 437580.5453123);
+    return pow(fract(sin(seed) * 437580.5453123), 0.5);
 }
 
 float noise(float seed)
@@ -64,41 +33,23 @@ float noise(float seed)
     return mix(random(i), random(i + 1.), smoothstep(0., 1., f));
 }
 
-vec4 burnEdge(vec4 tex, vec2 position)
+float edge(float seed)
 {
-    float fuzz = burned.x * .0001;
-    float seed = position.x * 10.;
-    float noised = noise(seed) * .2;
-    //float noised = sin(seed)+0.5;
-    float edge_distance = distance(position.y, 0.) + fuzz;
-    if (edge_distance < noised)
-    {
-        tex.a = 0.;
-    }
-    return tex;
+    seed *= 15.;
+    return noise(seed) * 0.2;
 }
 
-vec4 burnEdge2(vec4 tex, vec2 position)
+bool burnEdge(float first, float second, float target, float modifier)
 {
-    float fuzz = burned.x * .0001;
-    float seed = floor(position.y);
-    float noised = (noise1(seed) + 1.) * .1 + fuzz;
-    float edge_distance = min(min(min(distance(position.x, 0.), distance(position.x, 1.)), distance(position.y, 0.)), distance(position.y, 1.));
-    if (edge_distance < noised)
+    float fuzz = (sin(burned.y) + 1) * .01;
+	float seed = first + modifier;
+    float burned_edge = edge(seed) + fuzz;
+    float edge_distance = distance(second, target);
+    if (edge_distance < burned_edge)
     {
-        tex.a = 0.;
+        return true;
     }
-    return tex;
-}
-
-vec4 burnDissolve(vec4 tex)
-{
-    if (burn_colour_2.a > 0.01){
-        tex.rgb = tex.rgb*(1.-0.6*burned.x) + 0.6*burn_colour_2.rgb*burned.x;
-    } else if (burn_colour_1.a > 0.01){
-        tex.rgb = tex.rgb*(1.-0.6*burned.x) + 0.6*burn_colour_1.rgb*burned.x;
-    }
-    return tex;
+    return false;
 }
 
 // This is what actually changes the look of card
@@ -108,16 +59,15 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     vec4 tex = Texel(texture, texture_coords);
     // Position of a pixel within the sprite (0, 0 is top left)
 	vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
-    // Position scaled by card dimensions (0, 0 is center)
-    vec2 adjusted_uv = uv - vec2(0.5, 0.5);
-    adjusted_uv.x = adjusted_uv.x*texture_details.b/texture_details.a;
 
-    vec4 basetex = Texel(texture, texture_coords);
-    float t = burned.g + time;
-
-    // burn off corner
-    tex = burnEdge(tex, uv);
-    //tex = burnDissolve(tex);
+    if (burnEdge(uv.x, uv.y, 0., 0.) ||
+        burnEdge(uv.y, uv.x, 0., 1.) ||
+        burnEdge(uv.x, uv.y, 1., 2.) ||
+        burnEdge(uv.y, uv.x, 1., 3.)
+        )
+    {
+        tex.a = 0.;
+    }
 
     // required
 	return dissolve_mask(tex*colour, texture_coords, uv);
