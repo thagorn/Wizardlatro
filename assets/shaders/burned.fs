@@ -39,17 +39,23 @@ float edge(float seed)
     return noise(seed) * 0.2;
 }
 
-bool burnEdge(float first, float second, float target, float modifier)
+float burnEdge(float first, float second, float target, float modifier)
 {
     float fuzz = (sin(burned.y) + 1) * .01;
 	float seed = first + modifier;
     float burned_edge = edge(seed) + fuzz;
     float edge_distance = distance(second, target);
-    if (edge_distance < burned_edge)
-    {
-        return true;
-    }
-    return false;
+    return edge_distance - burned_edge;
+}
+
+vec4 burnFactor( in float inputFactor )
+{
+    inputFactor *= 1.5;
+    float factor = 1. - inputFactor;
+    float bigfactor = factor * factor;
+    float smallfactor = sqrt(factor);
+    float alphaFactor = 1. - step(1., inputFactor);
+    return vec4(0.94*smallfactor, 0.8*factor, .59*bigfactor, alphaFactor);
 }
 
 // This is what actually changes the look of card
@@ -60,13 +66,16 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     // Position of a pixel within the sprite (0, 0 is top left)
 	vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
 
-    if (burnEdge(uv.x, uv.y, 0., 0.) ||
-        burnEdge(uv.y, uv.x, 0., 1.) ||
-        burnEdge(uv.x, uv.y, 1., 2.) ||
-        burnEdge(uv.y, uv.x, 1., 3.)
-        )
+    float closestEdge = min(burnEdge(uv.x, uv.y, 0., 0.),
+                        min(burnEdge(uv.y, uv.x, 0., 1.),
+                        min(burnEdge(uv.x, uv.y, 1., 2.),
+                            burnEdge(uv.y, uv.x, 1., 3.))));
+
+    float distanceFactor = clamp(((closestEdge * -1.) + 0.1), 0., 1.) * 5.;
+
+    if (distanceFactor > 0.)
     {
-        tex.a = 0.;
+        tex = burnFactor(distanceFactor);
     }
 
     // required
