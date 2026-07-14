@@ -4,7 +4,7 @@
 	#define PRECISION mediump
 #endif
 
-// Look ionized.fs for explanation
+// [x, y] where x is bouncing approximately between 0 - 2 and y is increasing steadily over time
 extern PRECISION vec2 burned;
 
 extern PRECISION number dissolve;
@@ -23,6 +23,7 @@ vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv);
 
 float random(float seed)
 {
+    // pseudo-random values, clustered around 0
     return pow(fract(sin(seed) * 437580.5453123), 0.5);
 }
 
@@ -35,17 +36,17 @@ float noise(float seed)
 
 float edge(float seed)
 {
-    seed *= 15.;
-    return noise(seed) * 0.2;
+    seed *= 20.; // how often the edge dips are
+    return noise(seed) * 0.15; // how tall the edges are
 }
 
 float burnEdge(float first, float second, float target, float modifier)
 {
     float fuzz = (sin(burned.y) + 1) * .01;
-	float seed = first + modifier;
-    float burned_edge = edge(seed) + fuzz;
+    float seed = first + modifier;
+    float burned_edge = edge(seed) + fuzz + 0.1; // Adjustable burn depth
     float edge_distance = distance(second, target);
-    return edge_distance - burned_edge;
+    return burned_edge - edge_distance;
 }
 
 vec4 burnFactor( in float inputFactor )
@@ -64,14 +65,14 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     // Take pixel color (rgba) from `texture` at `texture_coords`, equivalent of texture2D in GLSL
     vec4 tex = Texel(texture, texture_coords);
     // Position of a pixel within the sprite (0, 0 is top left)
-	vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
+    vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
 
-    float closestEdge = min(burnEdge(uv.x, uv.y, 0., 0.),
-                        min(burnEdge(uv.y, uv.x, 0., 1.),
-                        min(burnEdge(uv.x, uv.y, 1., 2.),
+    float closestEdge = max(burnEdge(uv.x, uv.y, 0., 0.),
+                        max(burnEdge(uv.y, uv.x, 0., 1.),
+                        max(burnEdge(uv.x, uv.y, 1., 2.),
                             burnEdge(uv.y, uv.x, 1., 3.))));
 
-    float distanceFactor = clamp(((closestEdge * -1.) + 0.1), 0., 1.) * 5.;
+    float distanceFactor = clamp(closestEdge, 0., 1.) * 5.;
 
     if (distanceFactor > 0.)
     {
@@ -79,7 +80,7 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     }
 
     // required
-	return dissolve_mask(tex*colour, texture_coords, uv);
+    return dissolve_mask(tex*colour, texture_coords, uv);
 }
 
 vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv)
@@ -90,13 +91,13 @@ vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv)
 
     float adjusted_dissolve = (dissolve*dissolve*(3.-2.*dissolve))*1.02 - 0.01; //Adjusting 0.0-1.0 to fall to -0.1 - 1.1 scale so the mask does not pause at extreme values
 
-	float t = time * 10.0 + 2003.;
-	vec2 floored_uv = (floor((uv*texture_details.ba)))/max(texture_details.b, texture_details.a);
+    float t = time * 10.0 + 2003.;
+    vec2 floored_uv = (floor((uv*texture_details.ba)))/max(texture_details.b, texture_details.a);
     vec2 uv_scaled_centered = (floored_uv - 0.5) * 2.3 * max(texture_details.b, texture_details.a);
-	
-	vec2 field_part1 = uv_scaled_centered + 50.*vec2(sin(-t / 143.6340), cos(-t / 99.4324));
-	vec2 field_part2 = uv_scaled_centered + 50.*vec2(cos( t / 53.1532),  cos( t / 61.4532));
-	vec2 field_part3 = uv_scaled_centered + 50.*vec2(sin(-t / 87.53218), sin(-t / 49.0000));
+
+    vec2 field_part1 = uv_scaled_centered + 50.*vec2(sin(-t / 143.6340), cos(-t / 99.4324));
+    vec2 field_part2 = uv_scaled_centered + 50.*vec2(cos( t / 53.1532),  cos( t / 61.4532));
+    vec2 field_part3 = uv_scaled_centered + 50.*vec2(sin(-t / 87.53218), sin(-t / 49.0000));
 
     float field = (1.+ (
         cos(length(field_part1) / 19.483) + sin(length(field_part2) / 33.155) * cos(field_part2.y / 15.73) +
