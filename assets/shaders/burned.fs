@@ -46,7 +46,7 @@ float burnEdge(float first, float second, float target, float modifier)
     float seed = first + modifier;
     float burned_edge = edge(seed) + fuzz + 0.1; // Adjustable burn depth
     float edge_distance = distance(second, target);
-    return burned_edge - edge_distance;
+    return clamp(burned_edge - edge_distance, 0., 1.);
 }
 
 vec4 burnFactor( in float inputFactor )
@@ -67,12 +67,12 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     // Position of a pixel within the sprite (0, 0 is top left)
     vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
 
-    float closestEdge = max(burnEdge(uv.x, uv.y, 0., 0.),
-                        max(burnEdge(uv.y, uv.x, 0., 1.),
-                        max(burnEdge(uv.x, uv.y, 1., 2.),
-                            burnEdge(uv.y, uv.x, 1., 3.))));
+    float totalEdge = burnEdge(uv.x, uv.y, 0., 0.) +
+                      burnEdge(uv.y, uv.x, 0., 1.) +
+                      burnEdge(uv.x, uv.y, 1., 2.) +
+                      burnEdge(uv.y, uv.x, 1., 3.);
 
-    float distanceFactor = clamp(closestEdge, 0., 1.) * 5.;
+    float distanceFactor = totalEdge * 5.; // How sharp the burn color gradient should be
 
     if (distanceFactor > 0.)
     {
