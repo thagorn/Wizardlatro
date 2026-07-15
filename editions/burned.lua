@@ -4,20 +4,17 @@ SMODS.Edition({
     shader = "wlt_burned",
     disable_base_shader = true,
     disable_shadow = true,
-    loc_txt = {
-        name = "Overexposed",
-        label = "Overexposed",
-        text = {
-            "{C:green}Retrigger{} this card"
-        }
-    },
     discovered = true,
     unlocked = true,
     config = {},
-    in_shop = true,
-    weight = 800000,
-    extra_cost = 4,
-    apply_to_float = true
+    never_scores = true,
+    in_shop = false,
+    weight = 0,
+    extra_cost = 0,
+    apply_to_float = true,
+    in_pool = function(self, args)
+        return false
+    end,
 })
 
 

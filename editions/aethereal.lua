@@ -4,20 +4,20 @@ SMODS.Edition({
     shader = "wlt_aethereal",
     disable_base_shader = true,
     disable_shadow = true,
-    loc_txt = {
-        name = "Overexposed",
-        label = "Overexposed",
-        text = {
-            "{C:green}Retrigger{} this card"
-        }
-    },
     discovered = true,
     unlocked = true,
     config = {},
     in_shop = true,
-    weight = 800000,
+    weight = 3,
     extra_cost = 4,
-    apply_to_float = true
+    apply_to_float = true,
+    get_weight = function(self)
+        return G.GAME.edition_rate * self.weight
+    end,
+    in_pool = function(self, args)
+        -- allows standard packs and card creation but not jokers
+        return string.find(args.source, 'standard_edition')
+    end
 })
 
 

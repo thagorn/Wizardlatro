@@ -16,6 +16,20 @@ return {
                 },
             },
         },
+        Edition = {
+            e_wlt_aethereal = {
+                name = "Aethereal",
+                text = {
+                    "Grants {C:wlt_mana}mana{} instead of costing it"
+                }
+            },
+            e_wlt_burned = {
+                name = "Burned",
+                text = {
+                    "Does not score"
+                }
+            },
+        },
         Enhanced = {
             m_wlt_crystal = {
                 name = "Crystal Card",
@@ -508,6 +522,8 @@ return {
         labels = {
             k_wlt_spell="Spell",
             k_wlt_summon="Summon",
+            wlt_aethereal="Aethereal",
+            wlt_burned="Burned",
         },
         v_dictionary = {
             wlt_hand_minus="-#1# Hand",
