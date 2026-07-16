@@ -55,7 +55,7 @@ SMODS.Back({
         apply_mana_decks(self, back)
     end,
     initial_deck = {
-        ranks = { 'Ace', '2', '3', '4', '5' },
+        ranks = { 'Ace', 'King', '2', '3', '4', '5' },
         suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds' }
     },
     calculate = calc_mana_decks,

@@ -17,6 +17,13 @@ SMODS.Edition({
     in_pool = function(self, args)
         -- allows standard packs and card creation but not jokers
         return string.find(args.source, 'standard_edition')
+    end,
+    calculate = function(self, card, context)
+        if context.play_mana and context.other_card == card then
+            return {
+                invert = true
+            }
+        end
     end
 })
 

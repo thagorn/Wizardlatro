@@ -19,7 +19,7 @@ function destroy_mana_text()
 end
 
 function create_mana_text(game)
-    if WLT.MAGIC.play_mana > 0 then
+    if WLT.MAGIC.show_play_mana then
         if not game.mana_text then 
             game.mana_text = UIBox{
                 definition = mana_text_definition(), 

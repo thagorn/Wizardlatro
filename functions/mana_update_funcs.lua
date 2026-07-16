@@ -44,7 +44,14 @@ function set_current_soul(new_soul)
     WLT.MAGIC.cur_soul = math.max(new_soul, 0)
 end
 
+function reset_play_mana()
+    set_play_mana(0)
+    WLT.MAGIC.show_play_mana = false
+    destroy_mana_text()
+end
+
 function set_play_mana(new_mana)
+    WLT.MAGIC.show_play_mana = true
     if new_mana ~= WLT.MAGIC.play_mana then
         WLT.MAGIC.play_mana = new_mana
         WLT.MAGIC.play_mana_text = localize({
@@ -61,5 +68,4 @@ function set_play_mana(new_mana)
             WLT.MAGIC.play_soul_warning = ''
         end
     end
-
 end
