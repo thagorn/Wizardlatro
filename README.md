@@ -26,7 +26,7 @@ Wizardlatro is a mod that adds a new resource 'Mana' to manage while playing. In
 ## Mechanics
 
 * Start each round with 5 mana
-* Cards cost 1 mana to play, Face cards cost +1 mana
+* Cards cost 1 mana to play, Face cards cost +1 mana, Rankless (eg. Stone) cards cost 0 mana
 * Each game you start with 5 soul and if you play a hand that exceeds your current mana it dips into your soul instead
 * If your soul hits 0 you lose
 * Spell jokers are generated either by casting Scrolls/Wands or automatically from other jokers and will last until you play your next hand
