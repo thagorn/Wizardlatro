@@ -1,7 +1,9 @@
 calculate_play_mana_card = function(card, scoring_hand)
-    mana = 0
+    local mana = 0
     
-    if card:is_face(true) then
+    if SMODS.never_scores(card) then
+        mana = 0
+    elseif card:is_face(true) then
         mana = 2
     elseif not SMODS.has_no_rank(card) then
         mana = 1
