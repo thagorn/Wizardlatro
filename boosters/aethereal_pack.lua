@@ -5,7 +5,7 @@ SMODS.Booster {
     kind = 'wlt_aethereal',
     group_key = "k_wlt_aethereal_pack",
 	discovered = true,
-    weight = 10000,
+    weight = 0,
     cost = 4,
     config = { extra = 3, choose = 1 },
     ease_background_colour = function(self)
