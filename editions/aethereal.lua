@@ -26,30 +26,3 @@ SMODS.Edition({
         end
     end
 })
-
-
--- TEMP TODO
-
-SMODS.Consumable {
-    key = 'aethereal_card',
-	set = 'Tarot',
-    pos = { x = 0, y = 0 },
-    atlas = "consumeables",
-    config = { max_highlighted = 1, mod_conv = 'e_wlt_aethereal' },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
-        return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
-    end,
-    use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            trigger = 'after',
-            delay = 0.4,
-            func = function()
-                local target_card = G.hand.highlighted[1]
-                target_card:set_edition(card.ability.mod_conv, true)
-                card:juice_up(0.3, 0.5)
-                return true
-            end
-        }))
-    end
-}
