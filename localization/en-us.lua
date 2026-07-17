@@ -491,7 +491,14 @@ return {
                     "start every round with"
                 },
             },
-
+            p_wlt_aethereal_normal_1 = {
+                name = "Aethereal Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {C:edition}Aethereal {C:attention}Playing{} cards to",
+                    "add to your deck",
+                },
+            }
         },
         Tarot = {
             c_wlt_foresight = {
@@ -506,6 +513,7 @@ return {
     },
     misc = {
         dictionary = {
+            k_wlt_aethereal_pack="Aethereal Pack",
             k_wlt_spell="Spell",
             k_wlt_summon="Summon",
             wlt_cast="CAST",
