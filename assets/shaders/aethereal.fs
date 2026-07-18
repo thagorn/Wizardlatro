@@ -100,7 +100,7 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     vec4 tex = Texel( texture, texture_coords);
     vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
 
-    float minOpacity = (sin(aethereal.y * .5) - .3) * .2;
+    float minOpacity = sin(aethereal.y * .5) * .2;
     float maxOpacity = minOpacity + .2;
     // rotating horizontal bands
     float fac1 = 1-(max(minOpacity, min(distance(uv.y, (aethereal.r)), maxOpacity)));

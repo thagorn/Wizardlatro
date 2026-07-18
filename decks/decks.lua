@@ -47,8 +47,7 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_wand_conflagration", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_wand_bonfire", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_scroll_miracle", no_edition="true", stickers=nil})
                 return true
             end
         }))

@@ -283,6 +283,16 @@ return {
                     "hand at start of round",
                 },
             },
+            j_wlt_miracle = {
+                name = "Miracle",
+                text = {
+                    "Sell this card to",
+                    "open a free {C:attention}Aethereal Pack{}",
+                    "and add the result to hand",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_polymorph = {
                 name = "Polymorph",
                 text = {
@@ -371,6 +381,14 @@ return {
                 text = {
                     "This Scroll allows you",
                     "to {C:attention}cast Ice Forge{}",
+                    "once for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_scroll_miracle = {
+                name = "Scroll of Miracle",
+                text = {
+                    "This Scroll allows you",
+                    "to {C:attention}cast Miracle{}",
                     "once for {C:wlt_mana}#1#{} mana",
                 },
             },
