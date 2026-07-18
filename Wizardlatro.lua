@@ -2,13 +2,16 @@ WLT = SMODS.current_mod
 
 WLT.MAGIC = {
     play_mana = 0,
+    show_play_mana = false,
+    play_mana_text = '',
+    play_soul_warning = '',
     cur_mana = 5,
     max_mana = 5,
     rem_mana = 0,
     cur_soul = 5,
-    play_mana_text = '',
-    play_soul_warning = '',
 }
+
+WLT.burn_queue = {}
 
 -- Functions
 local function_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "functions")
@@ -31,6 +34,22 @@ local joker_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers")
 for _, file in ipairs(joker_src) do
     if string.find(file, "%.lua$") then
         assert(SMODS.load_file("jokers/" .. file))()
+    end
+end
+
+-- Boosters
+local joker_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "boosters")
+for _, file in ipairs(joker_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("boosters/" .. file))()
+    end
+end
+
+-- Editions
+local joker_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "editions")
+for _, file in ipairs(joker_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("editions/" .. file))()
     end
 end
 

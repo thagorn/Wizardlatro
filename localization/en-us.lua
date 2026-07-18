@@ -16,6 +16,21 @@ return {
                 },
             },
         },
+        Edition = {
+            e_wlt_aethereal = {
+                name = "Aethereal",
+                text = {
+                    "Grants {C:wlt_mana}mana{} instead of costing it"
+                }
+            },
+            e_wlt_burned = {
+                name = "Burned",
+                text = {
+                    "Does not score",
+                    "Destroyed when burned again"
+                }
+            },
+        },
         Enhanced = {
             m_wlt_crystal = {
                 name = "Crystal Card",
@@ -48,6 +63,27 @@ return {
                     "{C:attention}poker hand{} if matching",
                     "{C:planet}Planet{} card is in",
                     "your {C:attention}consumeable{} area",
+                },
+            },
+            j_wlt_bonfire = {
+                name = "Bonfire",
+                text = {
+                    "{C:attention}Every{} card",
+                    "held in hand",
+                    "gives {X:mult,C:white} X#1# {} Mult",
+                    "and is then {C:dark_edition}burned{}",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
+            j_wlt_conflagration = {
+                name = "Conflagration",
+                text = {
+                    "Played cards",
+                    "each give {X:mult,C:white} X#1# {} Mult",
+                    "and then are {C:dark_edition}burned{}",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
                 },
             },
             j_wlt_chain_lightning = {
@@ -214,6 +250,16 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_lightning_storm = {
+                name = "Lightning Storm",
+                text = {
+                    "Retrigger all",
+                    "played cards twice",
+                    "then {C:dark_edition}burn{} them",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_mana_droplet = {
                 name = "Mana Droplet",
                 text = {
@@ -235,6 +281,16 @@ return {
                 text = {
                     "Gain {C:wlt_mana}+#1#{} Mana per",
                     "hand at start of round",
+                },
+            },
+            j_wlt_miracle = {
+                name = "Miracle",
+                text = {
+                    "Sell this card to",
+                    "open a free {C:attention}Aethereal Pack{}",
+                    "and add the result to hand",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
                 },
             },
             j_wlt_polymorph = {
@@ -328,6 +384,14 @@ return {
                     "once for {C:wlt_mana}#1#{} mana",
                 },
             },
+            j_wlt_scroll_miracle = {
+                name = "Scroll of Miracle",
+                text = {
+                    "This Scroll allows you",
+                    "to {C:attention}cast Miracle{}",
+                    "once for {C:wlt_mana}#1#{} mana",
+                },
+            },
             j_wlt_scroll_polymorph = {
                 name = "Scroll of Polymorph",
                 text = {
@@ -402,6 +466,22 @@ return {
                     "and destroy the rest"
                 },
             },
+            j_wlt_wand_bonfire = {
+                name = "Wand of Bonfire",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Bonfire{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_conflagration = {
+                name = "Wand of Conflagration",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Conflagration{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
             j_wlt_wand_chain_lightning = {
                 name = "Wand of Chain Lightning",
                 text = {
@@ -432,6 +512,14 @@ return {
                 text = {
                     "This Wand allows you to",
                     "{C:attention}cast Lightning Bolt{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_lightning_storm = {
+                name = "Wand of Lightning Storm",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Lightning Storm{} once per",
                     "round for {C:wlt_mana}#1#{} mana",
                 },
             },
@@ -477,7 +565,14 @@ return {
                     "start every round with"
                 },
             },
-
+            p_wlt_aethereal_normal_1 = {
+                name = "Aethereal Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {C:edition}Aethereal {C:attention}Playing{} cards to",
+                    "add to your deck",
+                },
+            }
         },
         Tarot = {
             c_wlt_foresight = {
@@ -492,6 +587,7 @@ return {
     },
     misc = {
         dictionary = {
+            k_wlt_aethereal_pack="Aethereal Pack",
             k_wlt_spell="Spell",
             k_wlt_summon="Summon",
             wlt_cast="CAST",
@@ -508,6 +604,8 @@ return {
         labels = {
             k_wlt_spell="Spell",
             k_wlt_summon="Summon",
+            wlt_aethereal="Aethereal",
+            wlt_burned="Burned",
         },
         v_dictionary = {
             wlt_hand_minus="-#1# Hand",

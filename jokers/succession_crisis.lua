@@ -9,7 +9,7 @@ SMODS.Joker {
     discovered = true,
     rarity = 1,
     cost = 5,
-    config = { extra = { xmult = 3 } },
+    config = { extra = { xmult = 2 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
     end,

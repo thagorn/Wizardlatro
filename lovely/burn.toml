@@ -1,0 +1,15 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# Add logic to burn cards
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "-- TARGET: effects after hand evaluation"
+position = "after"
+payload = '''
+WLT.burn_queued_cards()
+'''
+match_indent = true
+times = 1

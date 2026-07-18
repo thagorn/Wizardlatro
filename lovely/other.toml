@@ -14,3 +14,33 @@ for kk, vv in pairs(G.playing_cards or {}) do
 '''
 match_indent = true
 times = 1
+
+# Allows us to open booster packs mid round without adding random draws
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.FUNCS.draw_from_hand_to_deck()"
+position = "at"
+payload = '''
+if not booster_obj.wlt_skip_draw then
+  G.FUNCS.draw_from_hand_to_deck()
+end
+'''
+match_indent = true
+times = 1
+
+# Allows us to add booster pack cards to hand
+# Otherwise it's added to hand but doesn't exist in deck
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "if select_to then"
+position = "after"
+payload = '''
+    if SMODS.is_playing_card(card) or args.playing_card or args.set == "Base" or args.set == "Enhanced" then
+        G.deck.config.card_limit = G.deck.config.card_limit + 1
+        table.insert(G.playing_cards, card)
+    end
+'''
+match_indent = true
+times = 1

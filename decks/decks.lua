@@ -38,7 +38,7 @@ SMODS.Back({
     config = { 
         max_mana = 5,
         max_soul = 5,
-        consumables = { "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight", "c_wlt_foresight" },
+        consumables = {},
     },
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
@@ -47,14 +47,14 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_power_word_death", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_scroll_miracle", no_edition="true", stickers=nil})
                 return true
             end
         }))
         apply_mana_decks(self, back)
     end,
     initial_deck = {
-        ranks = { 'Ace', '2', '3', '4', '5' },
+        ranks = { 'Ace', 'King', '2', '3', '4', '5' },
         suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds' }
     },
     calculate = calc_mana_decks,
