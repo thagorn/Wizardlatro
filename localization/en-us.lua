@@ -76,6 +76,16 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_conflagration = {
+                name = "Conflagration",
+                text = {
+                    "Played cards",
+                    "each give {X:mult,C:white} X#1# {} Mult",
+                    "and then are {C:dark_edition}burned{}",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_chain_lightning = {
                 name = "Chain Lightning",
                 text = {
@@ -443,6 +453,14 @@ return {
                 text = {
                     "This Wand allows you to",
                     "{C:attention}cast Bonfire{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_conflagration = {
+                name = "Wand of Conflagration",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Conflagration{} once per",
                     "round for {C:wlt_mana}#1#{} mana",
                 },
             },
