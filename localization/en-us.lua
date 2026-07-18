@@ -65,6 +65,17 @@ return {
                     "your {C:attention}consumeable{} area",
                 },
             },
+            j_wlt_bonfire = {
+                name = "Bonfire",
+                text = {
+                    "{C:attention}Every{} card",
+                    "held in hand",
+                    "gives {X:mult,C:white} X#1# {} Mult",
+                    "and is then {C:dark_edition}burned{}",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_chain_lightning = {
                 name = "Chain Lightning",
                 text = {
@@ -425,6 +436,14 @@ return {
                     "are played merge all the",
                     "chips into the first one",
                     "and destroy the rest"
+                },
+            },
+            j_wlt_wand_bonfire = {
+                name = "Wand of Bonfire",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Bonfire{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
                 },
             },
             j_wlt_wand_chain_lightning = {
