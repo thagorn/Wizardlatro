@@ -1,4 +1,4 @@
--- Standard Packs
+-- Aethereal Pack
 SMODS.Booster {
     pos = { x = 0, y = 6 }, -- TODO
     key = "aethereal_normal_1",

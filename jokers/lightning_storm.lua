@@ -45,6 +45,7 @@ SMODS.Joker {
         extra = { repetitions = 2 }
     },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS['e_wlt_burned']
         return { vars = { card.ability.extra.repetitions } }
     end,
     calculate = function(self, card, context)

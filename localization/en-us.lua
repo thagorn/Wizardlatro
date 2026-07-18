@@ -26,7 +26,8 @@ return {
             e_wlt_burned = {
                 name = "Burned",
                 text = {
-                    "Does not score"
+                    "Does not score",
+                    "Destroyed when burned again"
                 }
             },
         },
@@ -224,6 +225,16 @@ return {
                 text = {
                     "Retrigger all",
                     "played cards",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
+            j_wlt_lightning_storm = {
+                name = "Lightning Storm",
+                text = {
+                    "Retrigger all",
+                    "played cards twice",
+                    "then {C:dark_edition}burn{} them",
                     "{C:red,s:0.85}this card is destroyed{}",
                     "{C:red,s:0.85}after a hand is played{}"
                 },
@@ -446,6 +457,14 @@ return {
                 text = {
                     "This Wand allows you to",
                     "{C:attention}cast Lightning Bolt{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_lightning_storm = {
+                name = "Wand of Lightning Storm",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Lightning Storm{} once per",
                     "round for {C:wlt_mana}#1#{} mana",
                 },
             },
