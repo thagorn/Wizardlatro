@@ -14,6 +14,6 @@ SMODS.Joker {
         return { vars = { card.ability.extra.dollars } }
     end,
     calc_dollar_bonus = function(self, card)
-        return WLT.MAGIC.rem_mana * card.ability.extra.dollars
+        return G.GAME.WLT_STATE.rem_mana * card.ability.extra.dollars
     end
 }

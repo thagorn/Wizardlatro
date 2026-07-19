@@ -45,16 +45,16 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.after then
-            local remaining_mana = WLT.MAGIC.cur_mana
+            local remaining_mana = G.GAME.WLT_STATE.cur_mana
             local fountain_search = SMODS.find_card('j_wlt_fountain_of_mana', true)
             local _, fountain = next(fountain_search)
             if not fountain then
                 fountain = SMODS.add_card({key = card.ability.extra.summon, stickers = nil})
             end
             fountain.ability.extra.mana = fountain.ability.extra.mana + remaining_mana
-            spend_mana(remaining_mana)
+            WLT.spend_mana(remaining_mana)
         end
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
     end
 }
 
@@ -78,7 +78,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.first_hand_drawn then
-            update_current_mana(card.ability.extra.mana)
+            WLT.update_current_mana(card.ability.extra.mana)
         end
     end
 }

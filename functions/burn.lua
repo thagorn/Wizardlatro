@@ -1,4 +1,7 @@
 WLT.burn_card = function(card)
+    if not WLT.burn_queue then
+        WLT.burn_queue = {}
+    end
     WLT.burn_queue[#WLT.burn_queue + 1] = card
 end
 

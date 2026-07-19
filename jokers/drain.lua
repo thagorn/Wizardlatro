@@ -48,7 +48,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.rank_change } }
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.before then
             for _, played_card in ipairs(context.scoring_hand) do
                 assert(SMODS.modify_rank(played_card, card.ability.extra.rank_change, true))

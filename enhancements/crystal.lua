@@ -13,7 +13,7 @@ SMODS.Enhancement {
     end,
     calculate = function(self, card, context)
         if context.discard and context.other_card == card then
-            update_current_mana(card.ability.extra.mana)
+            WLT.update_current_mana(card.ability.extra.mana)
             return {
                 message = localize { type = 'variable', key = 'wlt_mana_plus', vars = { card.ability.extra.mana } },
                 colour = G.ARGS.LOC_COLOURS.wlt_mana

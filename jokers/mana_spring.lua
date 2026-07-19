@@ -15,7 +15,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.first_hand_drawn then
-            update_current_mana(card.ability.extra.mana * G.GAME.current_round.hands_left)
+            WLT.update_current_mana(card.ability.extra.mana * G.GAME.current_round.hands_left)
         end
     end
 }

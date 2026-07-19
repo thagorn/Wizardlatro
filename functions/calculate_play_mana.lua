@@ -1,4 +1,4 @@
-calculate_play_mana_card = function(card, scoring_hand)
+WLT.calculate_play_mana_card = function(card, scoring_hand)
     local mana = 0
     
     if SMODS.never_scores(card) then
@@ -25,7 +25,7 @@ calculate_play_mana_card = function(card, scoring_hand)
     return mana
 end
 
-function calculate_play_mana(cardarea)
+WLT.calculate_play_mana = function(cardarea)
     local selected_cards = cardarea.highlighted
     local text,disp_text,poker_hands,scoring_hand,non_loc_disp_text = G.FUNCS.get_poker_hand_info(selected_cards)
     
@@ -52,11 +52,11 @@ function calculate_play_mana(cardarea)
     local mana = 0
     if scoring_hand and #scoring_hand > 0 then
         for i, card in ipairs(scoring_hand) do
-            mana = mana + calculate_play_mana_card(card, scoring_hand)
+            mana = mana + WLT.calculate_play_mana_card(card, scoring_hand)
         end
-        set_play_mana(mana)
+        WLT.set_play_mana(mana)
     else
-        reset_play_mana()
+        WLT.reset_play_mana()
     end
 
 end

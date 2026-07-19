@@ -1,18 +1,5 @@
 WLT = SMODS.current_mod
 
-WLT.MAGIC = {
-    play_mana = 0,
-    show_play_mana = false,
-    play_mana_text = '',
-    play_soul_warning = '',
-    cur_mana = 5,
-    max_mana = 5,
-    rem_mana = 0,
-    cur_soul = 5,
-}
-
-WLT.burn_queue = {}
-
 -- Functions
 local function_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "functions")
 for _, file in ipairs(function_src) do

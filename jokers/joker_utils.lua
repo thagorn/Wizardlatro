@@ -1,4 +1,4 @@
-calc_spell_cast = function(self, card, context)
+WLT.calc_spell_cast = function(self, card, context)
     if context.after and not context.blueprint then
         if card.ability.extra.fresh then
             -- Solves some race conditions so spells don't immediately
@@ -13,7 +13,7 @@ calc_spell_cast = function(self, card, context)
     end
 end
 
-transform_card = function(playing_card, ability, sound)
+WLT.transform_card = function(playing_card, ability, sound)
     G.E_MANAGER:add_event(Event({
         trigger = 'after',
         delay = 0.15,

@@ -98,7 +98,7 @@ SMODS.Joker {
         return false
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.before then
             G.GAME.pool_flags.wlt_ritual_stage = 2
             return {
@@ -212,7 +212,7 @@ SMODS.Joker {
         return false
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.before then
             G.GAME.pool_flags.wlt_ritual_stage = 3
             return {
@@ -339,8 +339,7 @@ SMODS.Joker {
         return false
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
-
+        WLT.calc_spell_cast(self, card, context)
         if context.before then
             G.GAME.pool_flags.wlt_ritual_stage = 1
             SMODS.add_card({key = card.ability.extra.summon, stickers = nil})

@@ -42,7 +42,7 @@ SMODS.Joker {
                     }, card)
                 end
                 local mana_increase = #context.scoring_hand * card.ability.extra.mana
-                change_max_mana(mana_increase)
+                WLT.change_max_mana(mana_increase)
                 return {
                     message = localize { type = 'variable', key = 'wlt_mana_plus', vars = { mana_increase } },
                     colour = G.ARGS.LOC_COLOURS.wlt_mana

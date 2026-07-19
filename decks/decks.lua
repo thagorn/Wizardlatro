@@ -1,13 +1,11 @@
-calc_mana_decks = function(self, back, context)
+WLT.calc_mana_decks = function(self, back, context)
     if context.end_of_round and context.game_over == false and context.main_eval then
-        set_remaining_mana()
+        WLT.set_remaining_mana()
     end
 end
 
-apply_mana_decks = function(self, back)
-    set_max_mana(self.config.max_mana)
-    set_current_mana(self.config.max_mana)
-    set_current_soul(self.config.max_soul)
+WLT.apply_mana_decks = function(self, back)
+    WLT.initialize_state(self.config.max_mana, self.config.max_soul)
 end
 
 SMODS.Back({
@@ -26,9 +24,9 @@ SMODS.Back({
                 return true
             end
         }))
-        apply_mana_decks(self, back)
+        WLT.apply_mana_decks(self, back)
     end,
-    calculate = calc_mana_decks,
+    calculate = WLT.calc_mana_decks,
 })
 
 SMODS.Back({
@@ -51,11 +49,11 @@ SMODS.Back({
                 return true
             end
         }))
-        apply_mana_decks(self, back)
+        WLT.apply_mana_decks(self, back)
     end,
     initial_deck = {
         ranks = { 'Ace', 'King', '2', '3', '4', '5' },
         suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds' }
     },
-    calculate = calc_mana_decks,
+    calculate = WLT.calc_mana_decks,
 })
