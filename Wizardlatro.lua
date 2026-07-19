@@ -1,7 +1,5 @@
 WLT = SMODS.current_mod
 
-WLT.burn_queue = {}
-
 -- Functions
 local function_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "functions")
 for _, file in ipairs(function_src) do

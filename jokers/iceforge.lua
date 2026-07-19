@@ -54,7 +54,7 @@ SMODS.Joker {
             fountain.ability.extra.mana = fountain.ability.extra.mana + remaining_mana
             WLT.spend_mana(remaining_mana)
         end
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
     end
 }
 

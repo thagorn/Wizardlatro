@@ -65,7 +65,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.hands } }
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.before then
             ease_hands_played(card.ability.extra.hands)
             return {

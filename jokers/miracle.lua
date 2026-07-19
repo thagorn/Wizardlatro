@@ -44,7 +44,7 @@ SMODS.Joker {
         return { vars = {} }
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.selling_self then
             local lock = card.ID
 			G.CONTROLLER.locks[lock] = true

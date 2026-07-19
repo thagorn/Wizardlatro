@@ -49,7 +49,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.repetitions } }
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.repetition and context.cardarea == G.play then
             WLT.burn_card(context.other_card)
             return {

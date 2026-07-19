@@ -49,7 +49,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round then
             WLT.burn_card(context.other_card)
             return {

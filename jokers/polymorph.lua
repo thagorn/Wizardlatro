@@ -40,7 +40,7 @@ SMODS.Joker {
         extra = {}
     },
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.destroying_card and not context.blueprint then
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',

@@ -26,7 +26,7 @@ SMODS.Joker {
 		    for i = 1, #context.hand_drawn do
                 local playing_card = context.hand_drawn[i]
                 if not SMODS.has_enhancement(playing_card, 'm_wlt_crystal') then
-                    transform_card(playing_card, 'm_wlt_crystal', 'coin7')
+                    WLT.transform_card(playing_card, 'm_wlt_crystal', 'coin7')
 
                     card.ability.extra.progress = card.ability.extra.progress + 1
                     if card.ability.extra.progress >= card.ability.extra.transform then

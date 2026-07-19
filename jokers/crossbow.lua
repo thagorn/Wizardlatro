@@ -48,7 +48,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.mult } }
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.joker_main then
             return {
                 mult = card.ability.extra.mult,

@@ -63,7 +63,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.repetitions } }
     end,
     calculate = function(self, card, context)
-        calc_spell_cast(self, card, context)
+        WLT.calc_spell_cast(self, card, context)
         if context.before then
             card.ability.extra.position = pseudorandom('j_wlt_chain_lightning', 1, #context.scoring_hand)
         end
