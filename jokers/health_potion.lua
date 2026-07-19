@@ -16,7 +16,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.selling_self then
             play_sound('highlight1', 0.9 + math.random() * 0.1, 0.8)
-            update_current_soul(card.ability.extra.soul_gain)
+            WLT.update_current_soul(card.ability.extra.soul_gain)
         end
     end
 }

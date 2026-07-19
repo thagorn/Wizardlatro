@@ -7,7 +7,7 @@ G.FUNCS.on_cast = function(e, mute, nosave)
     if not card.ability.extra.reusable then
         SMODS.debuff_card(card, true, 'scroll')
     end
-    spend_mana(card.ability.extra.mana_cost)
+    WLT.spend_mana(card.ability.extra.mana_cost)
     SMODS.add_card({key = card.ability.extra.spell, no_edition = "true", stickers = nil})
 
     spell_cast(card)
@@ -22,7 +22,7 @@ function Card:can_cast(any_state, skip_check)
     if not self.ability.extra.charged then
         return false
     end
-    if not (self.ability.extra.mana_cost <= WLT.MAGIC.cur_mana) then
+    if not (self.ability.extra.mana_cost <= G.GAME.WLT_STATE.cur_mana) then
         return false
     end
     return true

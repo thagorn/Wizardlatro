@@ -39,7 +39,7 @@ target = "game.lua"
 pattern = "G.playing_cards = {}"
 position = "before"
 payload = '''
-create_mana_UI()
+WLT.create_mana_UI()
 '''
 match_indent = true
 times = 1
@@ -50,7 +50,7 @@ target = "functions/common_events.lua"
 pattern = "G.hand:hard_set_VT()"
 position = "before"
 payload = '''
-position_mana_UI()
+WLT.position_mana_UI()
 '''
 match_indent = true
 times = 1

@@ -1,4 +1,4 @@
-local function create_mana_sprite()
+local create_mana_sprite = function()
     local m_s = SMODS.create_sprite(
                     0,
                     0,
@@ -13,7 +13,7 @@ local function create_mana_sprite()
     return m_s
 end
 
-local function create_soul_sprite()
+local create_soul_sprite = function()
     local s_s = SMODS.create_sprite(
                     0,
                     0,
@@ -28,7 +28,7 @@ local function create_soul_sprite()
     return s_s
 end
 
-function create_mana_UI()
+WLT.create_mana_UI = function()
     local m_s = create_mana_sprite()
     local s_s = create_soul_sprite()
     G.mana_ui = UIBox{
@@ -60,7 +60,7 @@ function create_mana_UI()
                     {n=G.UIT.R, config = {align = 'cm', maxw = 1}, nodes={
                         {n=G.UIT.O, config={align = 'cm', object = 
                             DynaText({scale = 0.6,
-                                string = {{ref_table = WLT.MAGIC, ref_value = 'cur_mana'}},
+                                string = {{ref_table = G.GAME.WLT_STATE, ref_value = 'cur_mana'}},
                                 colours = { G.C.WHITE }
                             })
                         }}
@@ -79,7 +79,7 @@ function create_mana_UI()
                     {n=G.UIT.R, config = {align = 'cm', maxw = 1}, nodes={
                         {n=G.UIT.O, config={align = 'cm', object = 
                             DynaText({scale = 0.6,
-                                string = {{ref_table = WLT.MAGIC, ref_value = 'cur_soul'}},
+                                string = {{ref_table = G.GAME.WLT_STATE, ref_value = 'cur_soul'}},
                                 colours = { G.C.WHITE }
                             })
                         }}
@@ -93,7 +93,7 @@ function create_mana_UI()
             }
 end
 
-function position_mana_UI()
+WLT.position_mana_UI = function()
     -- Position it above the deck CardArea
     -- Centered left/right
     G.mana_ui.T.x = G.TILE_W - (G.deck.T.w / 2) - (G.mana_ui.T.w / 2) - 0.5
