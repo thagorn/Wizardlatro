@@ -22,7 +22,9 @@ target = "functions/button_callbacks.lua"
 pattern = "G.FUNCS.draw_from_hand_to_deck()"
 position = "at"
 payload = '''
-if not booster_obj.wlt_skip_draw then
+if G.wlt_skip_pack_draw then
+  G.wlt_skip_pack_draw = false
+else
   G.FUNCS.draw_from_hand_to_deck()
 end
 '''
