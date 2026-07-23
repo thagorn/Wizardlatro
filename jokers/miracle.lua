@@ -63,7 +63,7 @@ SMODS.Joker {
                     -- Add the selected card to hand not deck
                     booster.config.center.select_card = 'hand'
                     -- Don't put hand back in deck when finishing booster
-                    booster.config.center.wlt_skip_draw = true
+                    G.wlt_skip_pack_draw = true
 					G.FUNCS.use_card({ config = { ref_table = booster } })
 					booster:start_materialize()
 					G.CONTROLLER.locks[lock] = nil

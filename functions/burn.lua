@@ -7,7 +7,7 @@ end
 
 WLT.burn_queued_cards = function()
     local destroyed_cards = {}
-    for _, card in ipairs(WLT.burn_queue) do
+    for _, card in ipairs(WLT.burn_queue or {}) do
         if (card.edition and card.edition['wlt_burned']) then
             destroyed_cards[#destroyed_cards + 1] = card
         else
