@@ -271,9 +271,8 @@ return {
                 name = "Mana Potion",
                 text = {
                     "Gain {C:wlt_mana}+#1#{} Mana",
-                    "at start of round",
-                    "{C:wlt_mana}-#2#{} Mana per",
-                    "round played",
+                    "when used",
+                    "{C:inactive}({C:attention}#2#{C:inactive} remaining uses){}",
                 },
             },
             j_wlt_mana_spring = {
@@ -592,6 +591,7 @@ return {
             k_wlt_summon="Summon",
             wlt_cast="CAST",
             wlt_cast_ex="Cast!",
+            wlt_drink="DRINK",
             wlt_draws_nearer="It Draws Nearer",
             wlt_chant_ex="Chant!",
             wlt_drained_ex="Drained!",
