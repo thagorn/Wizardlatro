@@ -33,6 +33,7 @@ SMODS.Joker {
 SMODS.Joker {
     atlas = "jokers",
     pos = { x = 4, y = 3 },
+    pixel_size = { w = 50, h = 50 }, -- Actual size 39 x 41
     key = "lightning_bolt",
     blueprint_compat = true,
     eternal_compat = false,
