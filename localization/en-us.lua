@@ -440,6 +440,14 @@ return {
                     "cast a random {X:wlt_spell,C:red}Spell{}",
                 },
             },
+            j_wlt_spellbook = {
+                name = "Spellbook",
+                text = {
+                    "All {C:attention}Scroll Jokers{} in the",
+                    "shop and booster packs",
+                    "are {C:attention}free{} and {C:dark_edition}Negative{}",
+                },
+            },
             j_wlt_succession_crisis = {
                 name = "Succession Crisis",
                 text = {

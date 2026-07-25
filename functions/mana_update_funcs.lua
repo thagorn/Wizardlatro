@@ -21,6 +21,7 @@ end
 
 WLT.set_current_mana = function(new_mana)
     G.GAME.WLT_STATE.cur_mana = math.max(new_mana, 0)
+    WLT.update_play_mana_text()
 end
 
 WLT.spend_mana = function(change)
@@ -67,12 +68,18 @@ WLT.set_play_mana = function(new_mana)
     G.GAME.WLT_STATE.show_play_mana = true
     if new_mana ~= G.GAME.WLT_STATE.play_mana then
         G.GAME.WLT_STATE.play_mana = new_mana
+        WLT.update_play_mana_text()
+    end
+end
+
+WLT.update_play_mana_text = function()
+    if G.GAME.WLT_STATE.show_play_mana then
         G.GAME.WLT_STATE.play_mana_text = localize({
                                         type='variable',
                                         key='wlt_mana_text',
                                         vars={G.GAME.WLT_STATE.play_mana, G.GAME.WLT_STATE.cur_mana},
                                     })
-        if new_mana > G.GAME.WLT_STATE.cur_mana then
+        if G.GAME.WLT_STATE.play_mana > G.GAME.WLT_STATE.cur_mana then
             G.GAME.WLT_STATE.play_soul_warning = localize({
                                             type='variable',
                                             key='wlt_soul_warning',
