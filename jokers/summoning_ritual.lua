@@ -80,6 +80,7 @@ SMODS.Joker {
 SMODS.Joker {
     atlas = "jokers",
     pos = { x = 2, y = 2 },
+    pixel_size = { w = 40, h = 40 }, -- Actual size 36 x 35
     key = "ritual_1",
     blueprint_compat = false,
     eternal_compat = false,
@@ -194,6 +195,7 @@ SMODS.Joker {
 SMODS.Joker {
     atlas = "jokers",
     pos = { x = 4, y = 2 },
+    pixel_size = { w = 40, h = 40 }, -- Actual size 36 x 35
     key = "ritual_2",
     blueprint_compat = false,
     eternal_compat = false,
@@ -320,6 +322,7 @@ SMODS.Joker {
 SMODS.Joker {
     atlas = "jokers",
     pos = { x = 6, y = 2 },
+    pixel_size = { w = 40, h = 40 }, -- Actual size 36 x 35
     key = "ritual_3",
     blueprint_compat = false,
     eternal_compat = false,
