@@ -45,7 +45,8 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_scroll_miracle", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_spellbook", no_edition="true", stickers=nil})
+                SMODS.change_free_rerolls(100)
                 return true
             end
         }))

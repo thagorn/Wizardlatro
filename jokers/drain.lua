@@ -33,6 +33,7 @@ SMODS.Joker {
 SMODS.Joker {
     atlas = "jokers",
     pos = { x = 9, y = 0 },
+    pixel_size = { w = 55, h = 45 }, -- Actual size 48 x 39
     key = "drain",
     blueprint_compat = true,
     eternal_compat = false,
