@@ -54,7 +54,7 @@ SMODS.Back({
     end,
     initial_deck = {
         ranks = { 'Ace', 'King', '2', '3', '4', '5' },
-        suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds' }
+        suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds', 'wlt_Octarine' }
     },
     calculate = WLT.calc_mana_decks,
 })

@@ -615,6 +615,12 @@ return {
             wlt_aethereal="Aethereal",
             wlt_burned="Burned",
         },
+        suits_singular = {
+            wlt_Octarine="Octarine",
+        },
+        suits_plural = {
+            wlt_Octarine="Octarine",
+        },
         v_dictionary = {
             wlt_hand_minus="-#1# Hand",
             wlt_mana_minus="-#1# Mana",
