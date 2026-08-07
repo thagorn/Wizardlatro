@@ -579,7 +579,17 @@ return {
                     "{C:attention}#2# {C:edition}Aethereal {C:attention}Playing{} cards to",
                     "add to your deck",
                 },
-            }
+            },
+            wlt_card_mana = {
+                text={
+                    "{C:wlt_mana}#1#{} Mana",
+                },
+            },
+            wlt_card_mult = {
+                text={
+                    "{C:mult}+#1#{} Mult",
+                },
+            },
         },
         Tarot = {
             c_wlt_foresight = {
