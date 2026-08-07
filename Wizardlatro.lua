@@ -16,6 +16,14 @@ for _, file in ipairs(hook_src) do
     end
 end
 
+-- Hands
+local hand_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "hands")
+for _, file in ipairs(hand_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("hands/" .. file))()
+    end
+end
+
 -- Jokers
 local joker_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers")
 for _, file in ipairs(joker_src) do

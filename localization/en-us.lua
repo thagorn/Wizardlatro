@@ -625,6 +625,14 @@ return {
             wlt_aethereal="Aethereal",
             wlt_burned="Burned",
         },
+        poker_hands = {
+            ['wlt_Rainbow'] = 'Rainbow',
+        },
+        poker_hand_descriptions = {
+            ['wlt_Rainbow'] = {
+                '5 cards with different suits',
+            }
+        },
         suits_singular = {
             wlt_Octarine="Octarine",
         },
