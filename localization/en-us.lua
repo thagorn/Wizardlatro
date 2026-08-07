@@ -591,6 +591,17 @@ return {
                 },
             },
         },
+        Planet = {
+            c_wlt_pan = {
+                name = "Pan",
+                text = {
+                    "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+                    "{C:attention}#2#",
+                    "{C:mult}+#3#{} Mult and",
+                    "{C:chips}+#4#{} chips",
+                },
+            },
+        },
         Tarot = {
             c_wlt_foresight = {
                 name = "Foresight",
@@ -607,6 +618,7 @@ return {
             k_wlt_aethereal_pack="Aethereal Pack",
             k_wlt_spell="Spell",
             k_wlt_summon="Summon",
+			k_wlt_moon="Moon",
             wlt_cast="CAST",
             wlt_cast_ex="Cast!",
             wlt_drink="DRINK",

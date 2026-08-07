@@ -64,6 +64,14 @@ for _, file in ipairs(tarot_src) do
     end
 end
 
+-- Planets
+local planet_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "planets")
+for _, file in ipairs(planet_src) do
+    if string.find(file, "%.lua$") then
+        assert(SMODS.load_file("planets/" .. file))()
+    end
+end
+
 -- Suits
 local suit_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "suits")
 for _, file in ipairs(suit_src) do
