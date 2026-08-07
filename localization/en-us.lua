@@ -626,12 +626,32 @@ return {
             wlt_burned="Burned",
         },
         poker_hands = {
+            ['wlt_Pride'] = 'Pride',
             ['wlt_Rainbow'] = 'Rainbow',
+            ['wlt_Rainbow Five'] = 'Rainbow Five',
+            ['wlt_Rainbow House'] = 'Rainbow House',
+            ['wlt_Rainbow Straight'] = 'Rainbow Straight',
         },
         poker_hand_descriptions = {
+            ['wlt_Pride'] = {
+                '5 cards in a row (consecutive ranks) with',
+                'each card having a different suit',
+            },
             ['wlt_Rainbow'] = {
                 '5 cards with different suits',
-            }
+            },
+            ['wlt_Rainbow Five'] = {
+                'A Five of a Kind with each',
+                'card having a different suit',
+            },
+            ['wlt_Rainbow House'] = {
+                'A Three of a Kind and a Pair with',
+                'each card having a different suit',
+            },
+            ['wlt_Rainbow Straight'] = {
+                '5 cards in a row (consecutive ranks) with',
+                'each card having a different suit',
+            },
         },
         suits_singular = {
             wlt_Octarine="Octarine",

@@ -5,9 +5,6 @@ SMODS.PokerHandPart {
             return {}
         end
         if WLT.suit_count(hand, false, true) >= 5 then
-            for _, card in ipairs(hand) do
-                sendInfoMessage(card.config.card_key)
-            end
             return { hand }
         end
         return {}
