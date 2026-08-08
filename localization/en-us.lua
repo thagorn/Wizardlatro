@@ -572,6 +572,15 @@ return {
                     "start every round with"
                 },
             },
+            o_wlt_octarine = {
+                name = "Octarine",
+                text = {
+                    "{C:wlt_octarine}Octarine{} cards cost",
+                    "+1 {C:wlt_mana}mana{} to play",
+                    "and grant {C:mult}mult{} instead",
+                    "of {C:chips}chips{} equal to their rank"
+                }
+            },
             p_wlt_aethereal_normal_1 = {
                 name = "Aethereal Pack",
                 text = {
@@ -636,6 +645,14 @@ return {
                     "Enhances {C:attention}#1#{} selected",
                     "card into a ",
                     "{C:attention}#2#{}"
+                },
+            },
+            c_wlt_magic = {
+                name = "Magic",
+                text = {
+                    "Converts up to",
+                    "{C:attention}#1#{} selected cards",
+                    "to {V:1}#2#{}",
                 },
             },
         },
