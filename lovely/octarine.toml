@@ -50,10 +50,10 @@ target = "functions/common_events.lua"
 pattern = "(?<indent>[\t ]*)if .*?specific_vars.nominal_chips then"
 position = "before"
 payload = '''
-if specific_vars.nominal_mana then
+if specific_vars and specific_vars.nominal_mana then
     localize{type = 'other', key = 'wlt_card_mana'..(specific_vars.nominal_mana < 0 and '_minus' or ''), nodes = desc_nodes, vars = {specific_vars.nominal_mana}}
 end
-if specific_vars.nominal_mult then
+if specific_vars and specific_vars.nominal_mult then
     localize{type = 'other', key = 'wlt_card_mult'..(specific_vars.nominal_mult < 0 and '_minus' or ''), nodes = desc_nodes, vars = {specific_vars.nominal_mult}}
 end
 '''
