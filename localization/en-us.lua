@@ -177,6 +177,15 @@ return {
                 name = "No Spell",
                 text = {},
             },
+            j_wlt_faerie_circle = {
+                name = "Faerie Circle",
+                text = {
+                    "Create a {C:spectral}Spectral{} card",
+                    "when {C:attention}Blind{} is selected",
+                    "{C:green}#1# of #2#{} cards get",
+                    "drawn face down"
+                },
+            },
             j_wlt_fireball = {
                 name = "Fireball",
                 text = {
