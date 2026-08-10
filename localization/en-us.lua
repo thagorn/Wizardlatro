@@ -311,6 +311,14 @@ return {
                     "after playing a hand",
                 },
             },
+            j_wlt_pot_of_gold = {
+                name = "Pot of Gold",
+                text = {
+                    "Earn {C:money}$#1#{} at end of round",
+                    "Payout increases by {C:money}$#2#{}",
+                    "when hand contains a {C:attention}#3#{}",
+                },
+            },
             j_wlt_power_of_many = {
                 name = "Power of Many",
                 text = {
