@@ -465,6 +465,48 @@ return {
                     "are {C:attention}free{} and {C:dark_edition}Negative{}",
                 },
             },
+            j_wlt_spirit_of_air = {
+                name = "Spirit of Air",
+                text = {
+                    "Played cards with {C:diamonds}Diamond{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "when scored to add a retrigger",
+                    "to the next played card"
+                },
+            },
+            j_wlt_spirit_of_earth = {
+                name = "Spirit of Earth",
+                text = {
+                    "Played cards with {C:spades}Spade{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "to permanently gain {C:chips}+#2#{} Chips",
+                },
+            },
+            j_wlt_spirit_of_fire = {
+                name = "Spirit of Fire",
+                text = {
+                    "Played cards with {C:hearts}Heart{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "to give {X:mult,C:white}X#2#{} Mult when scored",
+                },
+            },
+            j_wlt_spirit_of_magic = {
+                name = "Spirit of Magic",
+                text = {
+                    "Played cards with {C:wlt_octarine}Octarine{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "to give {C:wlt_mana}+#2#{} mana when scored",
+                },
+            },
+            j_wlt_spirit_of_water = {
+                name = "Spirit of Water",
+                text = {
+                    "Played cards with {C:clubs}Club{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "to conjure a consumeable",
+                    "{C:inactive}(Must have room){}",
+                },
+            },
             j_wlt_succession_crisis = {
                 name = "Succession Crisis",
                 text = {
@@ -688,6 +730,7 @@ return {
             wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
             wlt_munch_ex="Munch!",
+            wlt_no_mana_ex="No Mana!",
             wlt_poof_ex="Poof!",
             wlt_summon_ex="Summon!",
             wlt_wish="WISH",
