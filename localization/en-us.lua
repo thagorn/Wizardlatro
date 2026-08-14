@@ -471,7 +471,8 @@ return {
                     "Played cards with {C:diamonds}Diamond{} suit",
                     "attempt to spend {C:wlt_mana}#1#{} mana",
                     "when scored to add a retrigger",
-                    "to the next played card"
+                    "to the next played card",
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive} retriggers){}"
                 },
             },
             j_wlt_spirit_of_earth = {
@@ -734,6 +735,7 @@ return {
             wlt_poof_ex="Poof!",
             wlt_summon_ex="Summon!",
             wlt_wish="WISH",
+            wlt_zzzt="Zzzt",
         },
         labels = {
             k_wlt_spell="Spell",
