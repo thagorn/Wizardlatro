@@ -66,5 +66,10 @@ SMODS.Joker {
             G.GAME.wlt_soa = G.GAME.wlt_soa + card.ability.extra.charges
             card.ability.extra.charges = 0
         end
+        if context.after and not context.blueprint and G.GAME.wlt_soa > 0 then
+            -- Wiggle if we're carrying retriggers between hands
+            local eval = function() return G.GAME.wlt_soa > 0 end
+            juice_card_until(card, eval, true)
+        end
     end
 }
