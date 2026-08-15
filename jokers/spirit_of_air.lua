@@ -33,12 +33,10 @@ SMODS.Joker {
                     if not context.other_card.repetition_trigger then
                         -- We're on the first scoring which is before the repetition context
                         -- Store retriggers on the joker until after repetition context
-                        sendInfoMessage('test')
                         card.ability.extra.charges = card.ability.extra.charges + 1
                     else
                         -- We're in retrigger scoring which is after the repetition context
                         -- And it's safe to directly update the global retriggers
-                        sendInfoMessage('test2')
                         G.GAME.wlt_soa = G.GAME.wlt_soa + 1
                     end
 
