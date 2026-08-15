@@ -392,6 +392,12 @@ return {
                     "Summons a Djinn",
                 },
             },
+            j_wlt_satchel = {
+                name = "Satchel",
+                text = {
+                    "{C:attention}+#1#{} consumable slots",
+                },
+            },
             j_wlt_scroll_iceforge = {
                 name = "Scroll of Ice Forge",
                 text = {
