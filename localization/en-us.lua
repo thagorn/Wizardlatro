@@ -365,6 +365,15 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_recycling = {
+                name = "Recycling",
+                text = {
+                    "Whenever an {C:attention}enhanced{}",
+                    "playing card is destroyed",
+                    "create a matching {C:tarot}Tarot{} card",
+                    "{C:inactive}(Must have room){}"
+                },
+            },
             j_wlt_revolution = {
                 name = "Revolution",
                 text = {
@@ -736,6 +745,7 @@ return {
             wlt_chant_ex="Chant!",
             wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
+            wlt_mulch_ex="Mulch!",
             wlt_munch_ex="Munch!",
             wlt_no_mana_ex="No Mana!",
             wlt_poof_ex="Poof!",
