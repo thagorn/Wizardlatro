@@ -1,12 +1,21 @@
 return {
     descriptions = {
         Back = {
+            b_wlt_archmage = {
+                name = "Archmage's Deck",
+                text = {
+                    "Start the run with",
+                    "{C:attention}2{} copies of {C:tarot,T:c_wlt_foresight}#1#{}",
+                    "The deck starts with {C:wlt_octarine}Octarine{}",
+                    "suit but no {C:attention}Aces{}, {C:attention}2{}s or {C:attention}3{}s",
+                    "{C:red}X#2#{} base Blind size",
+                },
+            },
             b_wlt_mana = {
                 name = "Mana Deck",
                 text = {
-                    "Start with {C:wlt_mana}5 mana{}",
-                    "{C:wlt_soul}5 soul{} and",
-                    "5 copies of {C:common}Mana Droplet{}",
+                    "Start the run with",
+                    "5 copies of {C:common}#1#{}",
                 },
             },
             b_wlt_test = {
