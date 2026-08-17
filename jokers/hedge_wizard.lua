@@ -1,8 +1,8 @@
--- Conjurer
+-- Hedge Wizard
 SMODS.Joker {
     atlas = "jokers",
     pos = { x = 3, y = 4 },
-    key = "conjurer",
+    key = "hedge_wizard",
     blueprint_compat = true,
     eternal_compat = true,
     unlocked = true,
