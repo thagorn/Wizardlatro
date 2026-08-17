@@ -7,7 +7,7 @@ SMODS.Joker {
     eternal_compat = true,
     unlocked = true,
     discovered = true,
-    rarity = 2,
+    rarity = 1,
     cost = 5,
     config = { extra = {} },
     calculate = function(self, card, context)
