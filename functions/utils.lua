@@ -41,8 +41,6 @@ WLT.conjure = function(effect_src, key_append)
         G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
         local consumeable_score = pseudorandom(pseudoseed(key_append or 'wlt_conjure'))
         local set, message
-        sendInfoMessage('hello')
-        sendInfoMessage(consumeable_score)
         if consumeable_score <= 0.45 then
             set = 'Planet'
             message = localize('k_plus_planet')

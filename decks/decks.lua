@@ -16,7 +16,6 @@ SMODS.Back({
     loc_vars = function(self, info_queue, back)
         return { vars = { 
             localize { type = 'name_text', key = 'j_wlt_mana_droplet', set = 'Joker' },
-            self.config.ante_scaling,
         } }
     end,
     apply = function(self, back)

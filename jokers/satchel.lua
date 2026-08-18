@@ -11,7 +11,6 @@ SMODS.Joker {
     cost = 4,
     config = { extra = { c_size = 2 } },
     loc_vars = function(self, info_queue, card)
-
         return { vars = { card.ability.extra.c_size } }
     end,
     add_to_deck = function(self, card, from_debuff)
