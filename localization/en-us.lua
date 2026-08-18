@@ -1,12 +1,21 @@
 return {
     descriptions = {
         Back = {
+            b_wlt_archmage = {
+                name = "Archmage's Deck",
+                text = {
+                    "Start the run with",
+                    "{C:attention}2{} copies of {C:tarot,T:c_wlt_foresight}#1#{}",
+                    "The deck starts with {C:wlt_octarine}Octarine{}",
+                    "suit but no {C:attention}Aces{}, {C:attention}2{}s or {C:attention}3{}s",
+                    "{C:red}X#2#{} base Blind size",
+                },
+            },
             b_wlt_mana = {
                 name = "Mana Deck",
                 text = {
-                    "Start with {C:wlt_mana}5 mana{}",
-                    "{C:wlt_soul}5 soul{} and",
-                    "5 copies of {C:common}Mana Droplet{}",
+                    "Start the run with",
+                    "5 copies of {C:common}#1#{}",
                 },
             },
             b_wlt_test = {
@@ -95,8 +104,8 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
-            j_wlt_conjurer = {
-                name = "Conjurer",
+            j_wlt_hedge_wizard = {
+                name = "Hedge Wizard",
                 text = {
                     "{C:red}+#1#{} Mult per {X:wlt_spell,C:red}spell{}",
                     "cast this run",
@@ -176,6 +185,15 @@ return {
             j_wlt_empty = {
                 name = "No Spell",
                 text = {},
+            },
+            j_wlt_faerie_circle = {
+                name = "Faerie Circle",
+                text = {
+                    "Create a {C:spectral}Spectral{} card",
+                    "when {C:attention}Blind{} is selected",
+                    "{C:green}#1# of #2#{} cards get",
+                    "drawn face down"
+                },
             },
             j_wlt_fireball = {
                 name = "Fireball",
@@ -311,6 +329,14 @@ return {
                     "after playing a hand",
                 },
             },
+            j_wlt_pot_of_gold = {
+                name = "Pot of Gold",
+                text = {
+                    "Earn {C:money}$#1#{} at end of round",
+                    "Payout increases by {C:money}$#2#{}",
+                    "when hand contains a {C:attention}#3#{}",
+                },
+            },
             j_wlt_power_of_many = {
                 name = "Power of Many",
                 text = {
@@ -348,6 +374,15 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_recycling = {
+                name = "Recycling",
+                text = {
+                    "Whenever an {C:attention}enhanced{}",
+                    "playing card is destroyed",
+                    "create a matching {C:tarot}Tarot{} card",
+                    "{C:inactive}(Must have room){}"
+                },
+            },
             j_wlt_revolution = {
                 name = "Revolution",
                 text = {
@@ -373,6 +408,12 @@ return {
                 name = "Summoning Ritual Step 3",
                 text = {
                     "Summons a Djinn",
+                },
+            },
+            j_wlt_satchel = {
+                name = "Satchel",
+                text = {
+                    "{C:attention}+#1#{} consumable slots",
                 },
             },
             j_wlt_scroll_iceforge = {
@@ -446,6 +487,49 @@ return {
                     "All {C:attention}Scroll Jokers{} in the",
                     "shop and booster packs",
                     "are {C:attention}free{} and {C:dark_edition}Negative{}",
+                },
+            },
+            j_wlt_spirit_of_air = {
+                name = "Spirit of Air",
+                text = {
+                    "Played cards with {C:diamonds}Diamond{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "when scored to add a retrigger",
+                    "to the next played card",
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive} retriggers){}"
+                },
+            },
+            j_wlt_spirit_of_earth = {
+                name = "Spirit of Earth",
+                text = {
+                    "Played cards with {C:spades}Spade{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "to permanently gain {C:chips}+#2#{} Chips",
+                },
+            },
+            j_wlt_spirit_of_fire = {
+                name = "Spirit of Fire",
+                text = {
+                    "Played cards with {C:hearts}Heart{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "to give {X:mult,C:white}X#2#{} Mult when scored",
+                },
+            },
+            j_wlt_spirit_of_magic = {
+                name = "Spirit of Magic",
+                text = {
+                    "Played cards with {C:wlt_octarine}Octarine{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "to give {C:wlt_mana}+#2#{} mana when scored",
+                },
+            },
+            j_wlt_spirit_of_water = {
+                name = "Spirit of Water",
+                text = {
+                    "Played cards with {C:clubs}Club{} suit",
+                    "attempt to spend {C:wlt_mana}#1#{} mana",
+                    "to conjure a consumeable",
+                    "{C:inactive}(Must have room){}",
                 },
             },
             j_wlt_succession_crisis = {
@@ -572,6 +656,15 @@ return {
                     "start every round with"
                 },
             },
+            o_wlt_octarine = {
+                name = "Octarine",
+                text = {
+                    "{C:wlt_octarine}Octarine{} cards cost",
+                    "+1 {C:wlt_mana}mana{} to play",
+                    "and grant {C:mult}mult{} instead",
+                    "of {C:chips}chips{} equal to their rank"
+                }
+            },
             p_wlt_aethereal_normal_1 = {
                 name = "Aethereal Pack",
                 text = {
@@ -579,7 +672,55 @@ return {
                     "{C:attention}#2# {C:edition}Aethereal {C:attention}Playing{} cards to",
                     "add to your deck",
                 },
-            }
+            },
+            wlt_card_mana = {
+                text={
+                    "{C:wlt_mana}#1#{} Mana",
+                },
+            },
+            wlt_card_mult = {
+                text={
+                    "{C:mult}+#1#{} Mult",
+                },
+            },
+        },
+        Planet = {
+            c_wlt_atlas = {
+                name = "Atlas",
+                text = {
+                    "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+                    "{C:attention}#2#",
+                    "{C:mult}+#3#{} Mult and",
+                    "{C:chips}+#4#{} chips",
+                },
+            },
+            c_wlt_pan = {
+                name = "Pan",
+                text = {
+                    "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+                    "{C:attention}#2#",
+                    "{C:mult}+#3#{} Mult and",
+                    "{C:chips}+#4#{} chips",
+                },
+            },
+            c_wlt_pandora = {
+                name = "Pandora",
+                text = {
+                    "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+                    "{C:attention}#2#",
+                    "{C:mult}+#3#{} Mult and",
+                    "{C:chips}+#4#{} chips",
+                },
+            },
+            c_wlt_prometheus = {
+                name = "Prometheus",
+                text = {
+                    "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+                    "{C:attention}#2#",
+                    "{C:mult}+#3#{} Mult and",
+                    "{C:chips}+#4#{} chips",
+                },
+            },
         },
         Tarot = {
             c_wlt_foresight = {
@@ -590,6 +731,14 @@ return {
                     "{C:attention}#2#{}"
                 },
             },
+            c_wlt_magic = {
+                name = "Magic",
+                text = {
+                    "Converts up to",
+                    "{C:attention}#1#{} selected cards",
+                    "to {V:1}#2#{}",
+                },
+            },
         },
     },
     misc = {
@@ -597,6 +746,7 @@ return {
             k_wlt_aethereal_pack="Aethereal Pack",
             k_wlt_spell="Spell",
             k_wlt_summon="Summon",
+			k_wlt_moon="Moon",
             wlt_cast="CAST",
             wlt_cast_ex="Cast!",
             wlt_drink="DRINK",
@@ -604,16 +754,53 @@ return {
             wlt_chant_ex="Chant!",
             wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
+            wlt_mulch_ex="Mulch!",
             wlt_munch_ex="Munch!",
+            wlt_no_mana_ex="No Mana!",
             wlt_poof_ex="Poof!",
             wlt_summon_ex="Summon!",
             wlt_wish="WISH",
+            wlt_zzzt="Zzzt",
         },
         labels = {
             k_wlt_spell="Spell",
             k_wlt_summon="Summon",
             wlt_aethereal="Aethereal",
             wlt_burned="Burned",
+        },
+        poker_hands = {
+            ['wlt_Pride'] = 'Pride',
+            ['wlt_Rainbow'] = 'Rainbow',
+            ['wlt_Rainbow Five'] = 'Rainbow Five',
+            ['wlt_Rainbow House'] = 'Rainbow House',
+            ['wlt_Rainbow Straight'] = 'Rainbow Straight',
+        },
+        poker_hand_descriptions = {
+            ['wlt_Pride'] = {
+                '5 cards in a row (consecutive ranks) with',
+                'each card having a different suit',
+            },
+            ['wlt_Rainbow'] = {
+                '5 cards with different suits',
+            },
+            ['wlt_Rainbow Five'] = {
+                'A Five of a Kind with each',
+                'card having a different suit',
+            },
+            ['wlt_Rainbow House'] = {
+                'A Three of a Kind and a Pair with',
+                'each card having a different suit',
+            },
+            ['wlt_Rainbow Straight'] = {
+                '5 cards in a row (consecutive ranks) with',
+                'each card having a different suit',
+            },
+        },
+        suits_singular = {
+            wlt_Octarine="Octarine",
+        },
+        suits_plural = {
+            wlt_Octarine="Octarine",
         },
         v_dictionary = {
             wlt_hand_minus="-#1# Hand",

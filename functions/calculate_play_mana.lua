@@ -1,13 +1,25 @@
-WLT.calculate_play_mana_card = function(card, scoring_hand)
-    local mana = 0
+function Card:wlt_base_mana()
     
-    if SMODS.never_scores(card) then
-        mana = 0
-    elseif card:is_face(true) then
-        mana = 2
-    elseif not SMODS.has_no_rank(card) then
-        mana = 1
+    if SMODS.never_scores(self) or SMODS.has_no_rank(self) then
+        return 0
     end
+
+    local mana = 1
+
+    if self:is_face(true) then
+        mana = mana + 1
+    end
+
+    if WLT.is_octarine(self) then
+        mana = mana + 1
+    end
+
+    return mana
+end
+
+WLT.calculate_play_mana_card = function(card, scoring_hand)
+
+    local mana = card:wlt_base_mana()
 
     local modifiers = {}
     SMODS.calculate_context({play_mana = true, other_card = card, scoring_hand = scoring_hand}, modifiers)

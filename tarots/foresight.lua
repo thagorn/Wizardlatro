@@ -4,6 +4,7 @@ SMODS.Consumable {
     set = "Tarot",
     pos = { x = 0, y = 0 },
     atlas = "consumeables",
+    discovered = true,
     config = { max_highlighted = 1, mod_conv = 'm_wlt_crystal' },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]

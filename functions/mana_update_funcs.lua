@@ -24,6 +24,14 @@ WLT.set_current_mana = function(new_mana)
     WLT.update_play_mana_text()
 end
 
+WLT.attempt_spend_mana = function(amount)
+    if amount <= G.GAME.WLT_STATE.cur_mana then
+        WLT.spend_mana(amount)
+        return true
+    end
+    return false
+end
+
 WLT.spend_mana = function(change)
     SMODS.calculate_context({spend_mana = true, spent_mana = change})
     WLT.update_current_mana(-1 * change)

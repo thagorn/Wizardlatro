@@ -1,0 +1,61 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+
+# Switch to chip calculation that excludes Octarine cards
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "return self.base.nominal + self.ability.bonus + (self.ability.perma_bonus or 0)"
+position = "at"
+payload = '''
+return self:wlt_base_chips() + self.ability.bonus + (self.ability.perma_bonus or 0)
+'''
+match_indent = true
+times = 1
+
+# Switch to mult calculation that includes Octarine cards
+[[patches]]
+[patches.regex]
+target = "card.lua"
+pattern ='''(?<indent>[\t ]*)-- TARGET: get_chip_mult[\n\s]*?return ret'''
+position = "at"
+payload = '''
+-- TARGET: get_chip_mult
+return self:wlt_base_mult() + ret
+'''
+line_prepend = '$indent'
+times = 1
+
+# Add Mana cost and Octarine mult to localization data for card tooltips
+# Also switch to new chip calculation
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "nominal_chips = self.base.nominal ~= 0 and self.base.nominal or nil,"
+position = "at"
+payload = '''
+nominal_chips = self:wlt_base_chips() ~= 0 and self:wlt_base_chips() or nil,
+nominal_mult = self:wlt_base_mult() ~= 0 and self:wlt_base_mult() or nil,
+nominal_mana = self:wlt_base_mana() ~= 0 and self:wlt_base_mana() or nil,
+'''
+match_indent = true
+times = 1
+
+# Add Mana cost and Octarine mult to card tooltips
+[[patches]]
+[patches.regex]
+target = "functions/common_events.lua"
+pattern = "(?<indent>[\t ]*)if .*?specific_vars.nominal_chips then"
+position = "before"
+payload = '''
+if specific_vars and specific_vars.nominal_mana then
+    localize{type = 'other', key = 'wlt_card_mana'..(specific_vars.nominal_mana < 0 and '_minus' or ''), nodes = desc_nodes, vars = {specific_vars.nominal_mana}}
+end
+if specific_vars and specific_vars.nominal_mult then
+    localize{type = 'other', key = 'wlt_card_mult'..(specific_vars.nominal_mult < 0 and '_minus' or ''), nodes = desc_nodes, vars = {specific_vars.nominal_mult}}
+end
+'''
+line_prepend = '$indent'
+times = 2

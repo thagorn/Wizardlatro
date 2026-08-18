@@ -13,6 +13,11 @@ SMODS.Back({
     pos = { x = 1, y = 0 },
     atlas = "cards",
     config = { max_mana = 5, max_soul = 5 },
+    loc_vars = function(self, info_queue, back)
+        return { vars = { 
+            localize { type = 'name_text', key = 'j_wlt_mana_droplet', set = 'Joker' },
+        } }
+    end,
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
             func = function()
@@ -26,6 +31,32 @@ SMODS.Back({
         }))
         WLT.apply_mana_decks(self, back)
     end,
+    calculate = WLT.calc_mana_decks,
+})
+
+SMODS.Back({
+    key = "archmage",
+    pos = { x = 3, y = 0 },
+    atlas = "cards",
+    config = {
+        max_mana = 5,
+        max_soul = 5,
+        ante_scaling = 2,
+        consumables = { 'c_wlt_foresight', 'c_wlt_foresight' }
+    },
+    loc_vars = function(self, info_queue, back)
+        return { vars = { 
+            localize { type = 'name_text', key = self.config.consumables[1], set = 'Tarot' },
+            self.config.ante_scaling,
+        } }
+    end,
+    apply = function(self, back)
+        WLT.apply_mana_decks(self, back)
+    end,
+    initial_deck = {
+        ranks = { 'King', 'Queen', 'Jack', '10', '9', '8', '7', '6', '5', '4' },
+        suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds', 'wlt_Octarine' }
+    },
     calculate = WLT.calc_mana_decks,
 })
 
@@ -45,7 +76,7 @@ SMODS.Back({
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_wlt_mana_droplet", no_edition="true", stickers=nil})
                 SMODS.add_card({key="j_blueprint", no_edition="true", stickers=nil})
-                SMODS.add_card({key="j_wlt_spellbook", no_edition="true", stickers=nil})
+                SMODS.add_card({key="j_wlt_pot_of_gold", no_edition="true", stickers=nil})
                 SMODS.change_free_rerolls(100)
                 return true
             end
@@ -54,7 +85,7 @@ SMODS.Back({
     end,
     initial_deck = {
         ranks = { 'Ace', 'King', '2', '3', '4', '5' },
-        suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds' }
+        suits = { 'Hearts', 'Clubs', 'Spades', 'Diamonds', 'wlt_Octarine' }
     },
     calculate = WLT.calc_mana_decks,
 })
