@@ -1,41 +1,41 @@
 SMODS.Atlas({
     key = "jokers",
-    path = "jokers.png",
+    path = "Jokers.png",
     px = 71,
     py = 95
 })
 
 SMODS.Atlas({
     key = "ui",
-    path = "ui.png",
+    path = "UI.png",
     px = 37,
     py = 49
 })
 
 SMODS.Atlas({
     key = "cards",
-    path = "cards.png",
+    path = "Cards.png",
     px = 71,
     py = 95
 })
 
 SMODS.Atlas({
     key = "consumeables",
-    path = "consumeables.png",
+    path = "Consumeables.png",
     px = 71,
     py = 95
 })
 
 SMODS.Atlas({
     key = "suits",
-    path = "suits.png",
+    path = "Suits.png",
     px = 71,
     py = 95
 })
 
 SMODS.Atlas({
     key = "suits_ui",
-    path = "suits_ui.png",
+    path = "Suits_UI.png",
     px = 18,
     py = 18
 })
