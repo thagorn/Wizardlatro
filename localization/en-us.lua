@@ -259,6 +259,15 @@ return {
                     "{C:red,s:0.85}after a hand is played{}"
                 },
             },
+            j_wlt_invisibility = {
+                name = "Invisibility",
+                text = {
+                    "Cards played this hand",
+                    "do not cost mana",
+                    "{C:red,s:0.85}this card is destroyed{}",
+                    "{C:red,s:0.85}after a hand is played{}"
+                },
+            },
             j_wlt_lightning_bolt = {
                 name = "Lightning Bolt",
                 text = {
@@ -595,6 +604,14 @@ return {
                 text = {
                     "This Wand allows you to",
                     "{C:attention}cast Fireball{} once per",
+                    "round for {C:wlt_mana}#1#{} mana",
+                },
+            },
+            j_wlt_wand_invisibility = {
+                name = "Wand of Invisibility",
+                text = {
+                    "This Wand allows you to",
+                    "{C:attention}cast Invisibility{} once per",
                     "round for {C:wlt_mana}#1#{} mana",
                 },
             },

@@ -27,6 +27,9 @@ WLT.calculate_play_mana_card = function(card, scoring_hand)
     for _, eval in pairs(modifiers) do
         if type(eval) == 'table' then
             for key, eval2 in pairs(eval) do
+                if key == 'free' or (type(eval2) == 'table' and eval2.free) then
+                    mana = mana * 0
+                end
                 if key == 'invert' or (type(eval2) == 'table' and eval2.invert) then
                     mana = mana * -1
                 end
