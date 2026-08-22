@@ -58,6 +58,15 @@ return {
                     "the end of the round"
                 },
             },
+            j_wlt_amnesia_potion = {
+                name = "Potion of Amnesia",
+                text = {
+                    "Reset costs of {C:green}Rerolls{}",
+                    "in the current shop",
+                    "when used",
+                    "{C:inactive}({C:attention}#1#{C:inactive} remaining uses){}",
+                },
+            },
             j_wlt_archmage = {
                 name = "Archmage",
                 text = {
@@ -771,6 +780,7 @@ return {
             wlt_chant_ex="Chant!",
             wlt_drained_ex="Drained!",
             wlt_drank_ex="Drank!",
+            wlt_huh_q="huh?",
             wlt_mulch_ex="Mulch!",
             wlt_munch_ex="Munch!",
             wlt_no_mana_ex="No Mana!",
