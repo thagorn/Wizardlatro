@@ -11,7 +11,6 @@ SMODS.Joker {
     cost = 4,
     config = { extra = {
         uses = 2,
-        mana = 5,
         has_button = true,
         button_text = nil,
         button_colour = G.C.MONEY

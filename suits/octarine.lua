@@ -10,4 +10,16 @@ SMODS.Suit {
     hc_atlas = 'suits',
     hc_ui_atlas = 'suits_ui',
     hc_colour = HEX('7C58FF'),
+    in_pool = function(self, args)
+        -- in_pool overrides the back's initial_deck definition
+        if G.GAME.selected_back_key and -- \\
+            (G.GAME.selected_back_key.name == 'b_wlt_test' or -- \\
+            G.GAME.selected_back_key.name == 'b_wlt_archmage') then
+            return true
+        end
+        if args.initial_deck then
+            return false
+        end
+        return true
+    end
 }
