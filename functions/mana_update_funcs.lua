@@ -13,6 +13,7 @@ end
 
 WLT.change_max_mana = function(change)
     WLT.set_max_mana(G.GAME.WLT_STATE.max_mana + change)
+    WLT.set_current_mana(G.GAME.WLT_STATE.cur_mana + change)
 end
 
 WLT.set_max_mana = function(new_mana)

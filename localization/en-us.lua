@@ -491,6 +491,13 @@ return {
                     "{C:inactive}(Still need: #2#){}",
                 },
             },
+            j_wlt_sorcerer = {
+                name = "Sorcerer",
+                text = {
+                    "{C:attention}+#1#{} to {C:wlt_mana}Mana Pool{}",
+                    "{C:blue}#2#{} hand each round",
+                },
+            },
             j_wlt_sparking_wand = {
                 name = "Sparking Wand",
                 text = {
