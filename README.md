@@ -15,9 +15,9 @@ Wizardlatro is a mod that adds a new resource 'Mana' to manage while playing. In
 
 * Spend mana to play cards
 * Cast spells for temporary effects during blinds
-* 69 new jokers
-  - 50 Shop jokers
-    - 24 Common jokers
+* 71 new jokers
+  - 52 Shop jokers
+    - 26 Common jokers
     - 22 Uncommon jokers
     - 4 Rare jokers
   - 19 Supplementary jokers
