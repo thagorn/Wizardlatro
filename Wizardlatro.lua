@@ -96,3 +96,13 @@ for _, file in ipairs(ui_src) do
     end
 end
 
+-- JokerDisplay
+if JokerDisplay then
+    local jokerdisplay_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jd")
+    for _, file in ipairs(jokerdisplay_src) do
+        if string.find(file, "%.lua$") then
+            assert(SMODS.load_file("jd/" .. file))()
+        end
+    end
+end
+
