@@ -35,9 +35,10 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.first_hand_drawn then
-            WLT.update_current_mana(card.ability.extra.mana * self:tally_crystal())
+            local mana_added = card.ability.extra.mana * self:tally_crystal()
+            WLT.update_current_mana(mana_added)
             return {
-                message = localize { type = 'variable', key = 'wlt_mana_plus', vars = { card.ability.extra.mana } },
+                message = localize { type = 'variable', key = 'wlt_mana_plus', vars = { mana_added } },
                 colour = G.ARGS.LOC_COLOURS.wlt_mana
             }
         end

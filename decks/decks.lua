@@ -41,7 +41,7 @@ SMODS.Back({
     config = {
         max_mana = 5,
         max_soul = 5,
-        ante_scaling = 2,
+        ante_scaling = 1.5,
         consumables = { 'c_wlt_foresight', 'c_wlt_foresight' }
     },
     loc_vars = function(self, info_queue, back)
