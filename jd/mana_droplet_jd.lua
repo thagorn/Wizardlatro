@@ -6,9 +6,3 @@ JokerDisplay.Definitions["j_wlt_mana_droplet"] = {
     },
     text_config = { colour = HEX('5044c1') }
 }
-JokerDisplay.Definitions["j_wlt_mana_potion"] = {
-    text = {
-        { text = "test" },
-    },
-    text_config = { colour = HEX('5044c1') }
-}
