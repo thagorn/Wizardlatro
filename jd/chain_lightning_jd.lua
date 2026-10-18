@@ -28,9 +28,11 @@ JokerDisplay.Definitions["j_wlt_wand_chain_lightning"] = {
     end,
 }
 JokerDisplay.Definitions["j_wlt_chain_lightning"] = {
-    reminder_text = {
-        { text = "(" },
-        { text = "not supported", colour = G.C.RED, scale = 0.25 },
-        { text = ")" },
+    extra = {
+        {
+            { text = "(" },
+            { text = "not supported", colour = G.C.RED, scale = 0.25 },
+            { text = ")" },
+        }
     },
 }

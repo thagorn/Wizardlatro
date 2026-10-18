@@ -1,7 +1,12 @@
 JokerDisplay.Definitions["j_wlt_astromancer"] = {
-    text = {
-        { ref_table = "card.joker_display_values", ref_value = "localized_text", colour = G.C.GREEN },
+    extra = {
+        {
+            { text = "(" },
+            { ref_table = "card.joker_display_values", ref_value = "localized_text", colour = G.C.ORANGE },
+            { text = ")" },
+        }
     },
+    extra_config = { scale = 0.3 },
     calc_function = function(card)
         local hands = ""
         local count = 0
