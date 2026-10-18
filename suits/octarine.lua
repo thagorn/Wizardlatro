@@ -17,7 +17,7 @@ SMODS.Suit {
             G.GAME.selected_back_key.name == 'b_wlt_archmage') then
             return true
         end
-        if args.initial_deck then
+        if args and args.initial_deck then
             return false
         end
         return true

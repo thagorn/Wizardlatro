@@ -39,7 +39,7 @@ target = "functions/button_callbacks.lua"
 pattern = "if select_to then"
 position = "after"
 payload = '''
-    if SMODS.is_playing_card(card) or args.playing_card or args.set == "Base" or args.set == "Enhanced" then
+    if WLT.is_playing_card(card) or args.playing_card or args.set == "Base" or args.set == "Enhanced" then
         G.deck.config.card_limit = G.deck.config.card_limit + 1
         table.insert(G.playing_cards, card)
     end
