@@ -486,7 +486,7 @@ return {
                     "When {C:attention}Blind{} is selected,",
                     "destroy {C:attention}ALL{} Jokers to the right.",
                     "Destroy a {C:common}Common{}, an {C:uncommon}Uncommon{}, and a {C:rare}Rare{}",
-                    "to {C:attention}cast Summoning Ritual Step 2{}",
+                    "to {C:attention}cast Summoning Ritual Step 3{}",
                     "once for {C:wlt_mana}#1#{} mana",
                     "{C:inactive}(Still need: #2#){}",
                 },

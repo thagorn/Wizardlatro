@@ -38,7 +38,6 @@ G.FUNCS.can_cast = function(e)
     end
 end
 
-
 function create_cast_button(card)
     local cast = nil
     if (type(card.ability.extra) == "table") and card.ability.extra.has_cast then

@@ -303,6 +303,9 @@ SMODS.Joker {
                                     message = localize('wlt_chant_ex'),
                                     colour = G.C.RED
                                 }, card)
+                                if card.ability.extra.common and card.ability.extra.uncommon and card.ability.extra.rare then
+                                    card.ability.extra.charged = true
+                                end
                             end
 
                             return true
@@ -310,9 +313,6 @@ SMODS.Joker {
                     }))
                 end
                 ::continue::
-            end
-            if card.ability.extra.common and card.ability.extra.uncommon and card.ability.extra.rare then
-                card.ability.extra.charged = true
             end
         end
     end
